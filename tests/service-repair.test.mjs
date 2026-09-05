@@ -58,3 +58,42 @@ test('a late failed event cannot revoke an already-succeeded payment (status pre
   assert.equal((await pool.query("SELECT status FROM payments WHERE tenant='north' AND payment_id='test-payment-1'")).rows[0].status,'succeeded');
   assert.equal(await count(pool,'outbox'),1);
 }));
+
+test('a failed/pending event for a *different* payment_id cannot downgrade an already-paid order',()=>withApi(async({request,pool})=>{
+  // Rank was previously computed only against the *same* payment_id's prior status, defaulting to
+  // -1 (unranked) for a payment_id never seen before. That let a second payment attempt's
+  // failed/pending observation "outrank" an unrelated already-paid order and flip its status.
+  await post(request);
+  assert.equal((await request('/api/orders/n-003')).body.status,'paid');
+  const secondAttemptFailed=await post(request,event({eventId:'second-attempt-failed',paymentId:'test-payment-2',status:'failed',occurredAt:'2026-08-07T12:00:00Z'}));
+  assert.equal(secondAttemptFailed.status,200);
+  assert.equal(secondAttemptFailed.body.orderStatus,'paid');
+  assert.equal((await request('/api/orders/n-003')).body.status,'paid');
+  // The failed observation is still retained as evidence for the second payment_id.
+  assert.equal((await pool.query("SELECT status FROM payments WHERE tenant='north' AND payment_id='test-payment-2'")).rows[0].status,'failed');
+  assert.equal(await count(pool,'outbox'),1);
+}));
+
+test('a second succeeded payment against an already-paid order does not duplicate fulfilment',()=>withApi(async({request,pool})=>{
+  await post(request);
+  assert.equal((await request('/api/orders/n-003')).body.status,'paid');
+  const secondSucceeded=await post(request,event({eventId:'second-attempt-succeeded',paymentId:'test-payment-2',status:'succeeded',occurredAt:'2026-08-07T12:00:00Z'}));
+  assert.equal(secondSucceeded.status,200);
+  assert.equal(secondSucceeded.body.orderStatus,'paid');
+  assert.equal((await pool.query("SELECT status FROM payments WHERE tenant='north' AND payment_id='test-payment-2'")).rows[0].status,'succeeded');
+  // Both payments are retained, but only one fulfilment intent must ever be created for this order.
+  assert.equal(await count(pool,'outbox'),1);
+}));
+
+test('multiple settled refunds against one order do not multiply paid-order count or gross revenue',()=>withApi(async({request,pool})=>{
+  // n-002 (paid, amountPaise 150000) already carries one settled refund (r-n-1, 30000).
+  // A LEFT JOIN orders->refunds fans out one row per refund, so counting/summing over the joined
+  // rows directly would double-count the order once per refund. Adding a second settled refund
+  // must reduce net revenue by exactly its own amount without touching paidOrders or gross.
+  const before=(await request('/api/summary')).body;
+  assert.equal(before.paidOrders,2);
+  await pool.query(`INSERT INTO refunds VALUES ('r-n-1-extra','north','n-002',50000,'settled','2026-08-04T09:00:00Z')`);
+  const after=(await request('/api/summary')).body;
+  assert.equal(after.paidOrders,before.paidOrders);
+  assert.equal(after.netRevenuePaise,before.netRevenuePaise-50000);
+}));

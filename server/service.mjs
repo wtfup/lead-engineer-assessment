@@ -9,9 +9,10 @@ export function createService({ pool }) {
   return {
     async summary(tenant) {
       const row=(await pool.query(`SELECT count(*)::int paid,COALESCE(sum(o.amount_paise),0)::bigint gross,
-          COALESCE(sum(CASE WHEN r.status='settled' THEN r.amount_paise ELSE 0 END),0)::bigint refunded
+          COALESCE(sum(r.settled_paise),0)::bigint refunded
         FROM orders o
-        LEFT JOIN (SELECT tenant,order_id,status,amount_paise FROM refunds) r ON r.tenant=o.tenant AND r.order_id=o.id
+        LEFT JOIN (SELECT tenant,order_id,sum(amount_paise) FILTER (WHERE status='settled') settled_paise
+          FROM refunds GROUP BY tenant,order_id) r ON r.tenant=o.tenant AND r.order_id=o.id
         WHERE o.tenant=$1 AND o.status='paid'`,[tenant])).rows[0];
       const spend=Number((await pool.query('SELECT COALESCE(sum(spend_paise),0)::bigint spend FROM ad_metrics WHERE tenant=$1',[tenant])).rows[0].spend);
       const revenue=Number(row.gross)-Number(row.refunded);
@@ -48,16 +49,23 @@ export function createService({ pool }) {
         const wasAlreadyPaid = order.status==='paid';
         const priorRank = existingPayment ? STATUS_RANK[existingPayment.status] : -1;
         const applies = STATUS_RANK[e.status] >= priorRank;
+        // An order that already reached "paid" (via this payment_id or another one) must never be
+        // downgraded by a failed/pending observation on the order itself — only another succeeded
+        // observation is a no-op re-confirmation. The payment's own record is still tracked below
+        // regardless, since a failed/pending payment attempt is retained as evidence either way.
+        const appliesToOrder = applies && (!wasAlreadyPaid || e.status==='succeeded');
 
         if(applies) {
           await client.query(`INSERT INTO payments (tenant,payment_id,order_id,status,amount_paise) VALUES ($1,$2,$3,$4,$5)
             ON CONFLICT (tenant,payment_id) DO UPDATE SET status=EXCLUDED.status,amount_paise=EXCLUDED.amount_paise`,
             [tenant,e.paymentId,e.orderId,e.status,e.amountPaise]);
+        }
+        if(appliesToOrder) {
           await client.query('UPDATE orders SET status=$1 WHERE tenant=$2 AND id=$3',[ORDER_STATUS[e.status],tenant,e.orderId]);
         }
 
-        const orderStatus = applies ? ORDER_STATUS[e.status] : order.status;
-        if(e.status==='succeeded' && applies && !wasAlreadyPaid) {
+        const orderStatus = appliesToOrder ? ORDER_STATUS[e.status] : order.status;
+        if(e.status==='succeeded' && appliesToOrder && !wasAlreadyPaid) {
           await client.query('INSERT INTO outbox (tenant,order_id,business_key) VALUES ($1,$2,$3)',[tenant,e.orderId,`${tenant}:payment:${e.paymentId}`]);
         }
         await client.query('INSERT INTO audit (tenant,order_id,event_id,action) VALUES ($1,$2,$3,$4)',[tenant,e.orderId,e.eventId,`payment_${e.status}`]);
