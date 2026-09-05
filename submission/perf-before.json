@@ -1,0 +1,113 @@
+DO
+DROP TABLE
+psql:/tmp/performance.sql:16: NOTICE:  table "query_lab_orders" does not exist, skipping
+CREATE TABLE
+INSERT 0 50000
+ANALYZE
+                                    QUERY PLAN
+-----------------------------------------------------------------------------------
+ [                                                                                +
+   {                                                                              +
+     "Plan": {                                                                    +
+       "Node Type": "Limit",                                                      +
+       "Parallel Aware": false,                                                   +
+       "Async Capable": false,                                                    +
+       "Startup Cost": 1324.66,                                                   +
+       "Total Cost": 1324.79,                                                     +
+       "Plan Rows": 50,                                                           +
+       "Plan Width": 20,                                                          +
+       "Actual Startup Time": 3.629,                                              +
+       "Actual Total Time": 3.635,                                                +
+       "Actual Rows": 50,                                                         +
+       "Actual Loops": 1,                                                         +
+       "Shared Hit Blocks": 409,                                                  +
+       "Shared Read Blocks": 0,                                                   +
+       "Shared Dirtied Blocks": 0,                                                +
+       "Shared Written Blocks": 0,                                                +
+       "Local Hit Blocks": 0,                                                     +
+       "Local Read Blocks": 0,                                                    +
+       "Local Dirtied Blocks": 0,                                                 +
+       "Local Written Blocks": 0,                                                 +
+       "Temp Read Blocks": 0,                                                     +
+       "Temp Written Blocks": 0,                                                  +
+       "Plans": [                                                                 +
+         {                                                                        +
+           "Node Type": "Sort",                                                   +
+           "Parent Relationship": "Outer",                                        +
+           "Parallel Aware": false,                                               +
+           "Async Capable": false,                                                +
+           "Startup Cost": 1324.66,                                               +
+           "Total Cost": 1337.13,                                                 +
+           "Plan Rows": 4987,                                                     +
+           "Plan Width": 20,                                                      +
+           "Actual Startup Time": 3.629,                                          +
+           "Actual Total Time": 3.631,                                            +
+           "Actual Rows": 50,                                                     +
+           "Actual Loops": 1,                                                     +
+           "Sort Key": ["created_at DESC", "id DESC"],                            +
+           "Sort Method": "top-N heapsort",                                       +
+           "Sort Space Used": 32,                                                 +
+           "Sort Space Type": "Memory",                                           +
+           "Shared Hit Blocks": 409,                                              +
+           "Shared Read Blocks": 0,                                               +
+           "Shared Dirtied Blocks": 0,                                            +
+           "Shared Written Blocks": 0,                                            +
+           "Local Hit Blocks": 0,                                                 +
+           "Local Read Blocks": 0,                                                +
+           "Local Dirtied Blocks": 0,                                             +
+           "Local Written Blocks": 0,                                             +
+           "Temp Read Blocks": 0,                                                 +
+           "Temp Written Blocks": 0,                                              +
+           "Plans": [                                                             +
+             {                                                                    +
+               "Node Type": "Seq Scan",                                           +
+               "Parent Relationship": "Outer",                                    +
+               "Parallel Aware": false,                                           +
+               "Async Capable": false,                                            +
+               "Relation Name": "query_lab_orders",                               +
+               "Alias": "query_lab_orders",                                       +
+               "Startup Cost": 0.00,                                              +
+               "Total Cost": 1159.00,                                             +
+               "Plan Rows": 4987,                                                 +
+               "Plan Width": 20,                                                  +
+               "Actual Startup Time": 0.005,                                      +
+               "Actual Total Time": 2.955,                                        +
+               "Actual Rows": 5000,                                               +
+               "Actual Loops": 1,                                                 +
+               "Filter": "((tenant = 'north'::text) AND (status = 'paid'::text))",+
+               "Rows Removed by Filter": 45000,                                   +
+               "Shared Hit Blocks": 409,                                          +
+               "Shared Read Blocks": 0,                                           +
+               "Shared Dirtied Blocks": 0,                                        +
+               "Shared Written Blocks": 0,                                        +
+               "Local Hit Blocks": 0,                                             +
+               "Local Read Blocks": 0,                                            +
+               "Local Dirtied Blocks": 0,                                         +
+               "Local Written Blocks": 0,                                         +
+               "Temp Read Blocks": 0,                                             +
+               "Temp Written Blocks": 0                                           +
+             }                                                                    +
+           ]                                                                      +
+         }                                                                        +
+       ]                                                                          +
+     },                                                                           +
+     "Planning": {                                                                +
+       "Shared Hit Blocks": 56,                                                   +
+       "Shared Read Blocks": 0,                                                   +
+       "Shared Dirtied Blocks": 0,                                                +
+       "Shared Written Blocks": 0,                                                +
+       "Local Hit Blocks": 0,                                                     +
+       "Local Read Blocks": 0,                                                    +
+       "Local Dirtied Blocks": 0,                                                 +
+       "Local Written Blocks": 0,                                                 +
+       "Temp Read Blocks": 0,                                                     +
+       "Temp Written Blocks": 0                                                   +
+     },                                                                           +
+     "Planning Time": 0.192,                                                      +
+     "Triggers": [                                                                +
+     ],                                                                           +
+     "Execution Time": 3.655                                                      +
+   }                                                                              +
+ ]
+(1 row)
+

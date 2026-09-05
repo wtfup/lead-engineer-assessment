@@ -1,0 +1,63 @@
+SET
+ tenant | order_id | true_order_amount_paise | observation_count | naive_join_sum_paise | correct_amount_paise
+--------+----------+-------------------------+-------------------+----------------------+----------------------
+ north  | n-001    |                  100000 |                 3 |               300000 |               100000
+(1 row)
+
+DROP TABLE
+psql:/tmp/reconciliation.sql:29: NOTICE:  table "raw_gateway_deliveries_staging" does not exist, skipping
+CREATE TABLE
+INSERT 0 8
+ raw_feed_rows | unique_transport_identities_in_raw_feed | canonical_payment_events_rows | unique_business_payments_in_raw_feed | canonical_payments_rows
+---------------+-----------------------------------------+-------------------------------+--------------------------------------+-------------------------
+             8 |                                       7 |                             7 |                                    5 |                       5
+(1 row)
+
+     campaign_attribution      | paid_orders | gross_revenue_paise
+-------------------------------+-------------+---------------------
+ n-search                      |           1 |              100000
+ n-social                      |           1 |              150000
+ s-search                      |           2 |              250000
+ GRAND TOTAL (all paid orders) |           4 |              500000
+(4 rows)
+
+ tenant | paid_orders | gross_revenue_paise | net_revenue_paise | ad_spend_paise | net_roas
+--------+-------------+---------------------+-------------------+----------------+----------
+ north  |           2 |              250000 |            220000 |          55000 |   4.0000
+ south  |           2 |              250000 |            200000 |          40000 |   5.0000
+(2 rows)
+
+ tenant | campaign_id |           name           | paid_orders | net_revenue_paise | ad_spend_paise | net_roas
+--------+-------------+--------------------------+-------------+-------------------+----------------+----------
+ north  | n-search    | North Search — synthetic |           1 |            100000 |          40000 |   2.5000
+ north  | n-social    | North Social — synthetic |           1 |            120000 |          15000 |   8.0000
+ south  | s-search    | South Search — synthetic |           2 |            200000 |          40000 |   5.0000
+(3 rows)
+
+                   tenant                    | reported_conversions | reported_revenue_paise
+---------------------------------------------+----------------------+------------------------
+ north                                       |                    9 |                1030000
+ north (actual, distinct succeeded payments) |                    3 |                 250000
+ south                                       |                    4 |                 600000
+ south (actual, distinct succeeded payments) |                    2 |                 250000
+(4 rows)
+
+ tenant | payment_id | order_id | observation_count |          event_ids          |  statuses_in_arrival_order
+--------+------------+----------+-------------------+-----------------------------+------------------------------
+ north  | p-n1       | n-001    |                 3 | {e-n1,e-n1-retry,e-n1-late} | {succeeded,succeeded,failed}
+(1 row)
+
+ tenant | order_id | authoritative_order_status | authoritative_payment_status | status_if_last_arrival_wins_instead
+--------+----------+----------------------------+------------------------------+-------------------------------------
+ north  | n-001    | paid                       | succeeded                    | failed
+(1 row)
+
+  id   | tenant |     created_at_utc     |   created_at_ist    | utc_calendar_date | ist_calendar_date
+-------+--------+------------------------+---------------------+-------------------+-------------------
+ n-002 | north  | 2026-08-01 18:35:00+00 | 2026-08-02 00:05:00 | 2026-08-01        | 2026-08-02
+ n-003 | north  | 2026-08-01 19:30:00+00 | 2026-08-02 01:00:00 | 2026-08-01        | 2026-08-02
+ n-004 | north  | 2026-08-01 20:30:00+00 | 2026-08-02 02:00:00 | 2026-08-01        | 2026-08-02
+ n-005 | north  | 2026-08-02 19:30:00+00 | 2026-08-03 01:00:00 | 2026-08-02        | 2026-08-03
+ s-001 | south  | 2026-08-01 21:00:00+00 | 2026-08-02 02:30:00 | 2026-08-01        | 2026-08-02
+(5 rows)
+

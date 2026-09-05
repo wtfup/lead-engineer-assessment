@@ -14,6 +14,7 @@
     "db:performance": "node scripts/performance.mjs",
     "test": "node --test tests/package.test.mjs tests/api-smoke.test.mjs tests/database.test.mjs tests/operator-safety.test.mjs",
     "test:challenge": "node --test tests/challenge.acceptance.test.mjs",
+    "test:repair": "node --test tests/service-repair.test.mjs",
     "test:e2e": "playwright test",
     "typecheck": "tsc --noEmit",
     "doctor": "node scripts/doctor.mjs",

@@ -1,0 +1,33 @@
+SET
+--- after failed POST: order n-005 status (must still be pending) ---
+  id   | status
+-------+---------
+ n-005 | pending
+(1 row)
+
+--- payment_events for n-005 (must be zero rows) ---
+ n
+---
+ 0
+(1 row)
+
+--- payments for evidence-p1 (must be zero rows) ---
+ n
+---
+ 0
+(1 row)
+
+--- outbox for n-005 (must be zero rows) ---
+ n
+---
+ 0
+(1 row)
+
+--- audit for n-005 (must be zero rows) ---
+ n
+---
+ 0
+(1 row)
+
+DROP TRIGGER
+DROP FUNCTION

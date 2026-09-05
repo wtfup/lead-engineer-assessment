@@ -1,0 +1,8 @@
+00:00 +0: loading /Users/amarbansal28/Downloads/repo/wtf/lead-engineer-assessment/mobile/test/state_smoke_test.dart
+00:00 +0: /Users/amarbansal28/Downloads/repo/wtf/lead-engineer-assessment/mobile/test/state_smoke_test.dart: active error is visible and retry can succeed
+00:00 +1: /Users/amarbansal28/Downloads/repo/wtf/lead-engineer-assessment/mobile/test/smoke_test.dart: offline fixture loads and renders integer paise accurately
+00:00 +2: /Users/amarbansal28/Downloads/repo/wtf/lead-engineer-assessment/mobile/test/smoke_test.dart: offline fixture loads and renders integer paise accurately
+00:00 +3: /Users/amarbansal28/Downloads/repo/wtf/lead-engineer-assessment/mobile/test/smoke_test.dart: offline fixture loads and renders integer paise accurately
+00:00 +4: /Users/amarbansal28/Downloads/repo/wtf/lead-engineer-assessment/mobile/test/state_smoke_test.dart: completion after disposal is safe (failure=false)
+00:00 +5: /Users/amarbansal28/Downloads/repo/wtf/lead-engineer-assessment/mobile/test/state_smoke_test.dart: completion after disposal is safe (failure=true)
+00:00 +6: All tests passed!
