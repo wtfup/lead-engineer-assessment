@@ -1,0 +1,276 @@
+{
+  "tenants": [
+    "north",
+    "south"
+  ],
+  "campaigns": [
+    {
+      "id": "n-search",
+      "tenant": "north",
+      "name": "North Search \u2014 synthetic"
+    },
+    {
+      "id": "n-social",
+      "tenant": "north",
+      "name": "North Social \u2014 synthetic"
+    },
+    {
+      "id": "s-search",
+      "tenant": "south",
+      "name": "South Search \u2014 synthetic"
+    }
+  ],
+  "orders": [
+    {
+      "id": "n-001",
+      "tenant": "north",
+      "campaignId": "n-search",
+      "amountPaise": 100000,
+      "currency": "INR",
+      "status": "paid",
+      "createdAt": "2026-08-01T23:55:00+05:30"
+    },
+    {
+      "id": "n-002",
+      "tenant": "north",
+      "campaignId": "n-social",
+      "amountPaise": 150000,
+      "currency": "INR",
+      "status": "paid",
+      "createdAt": "2026-08-02T00:05:00+05:30"
+    },
+    {
+      "id": "n-003",
+      "tenant": "north",
+      "campaignId": "n-search",
+      "amountPaise": 90000,
+      "currency": "INR",
+      "status": "pending",
+      "createdAt": "2026-08-02T01:00:00+05:30"
+    },
+    {
+      "id": "n-004",
+      "tenant": "north",
+      "campaignId": "n-social",
+      "amountPaise": 60000,
+      "currency": "INR",
+      "status": "failed",
+      "createdAt": "2026-08-02T02:00:00+05:30"
+    },
+    {
+      "id": "n-005",
+      "tenant": "north",
+      "campaignId": "n-search",
+      "amountPaise": 80000,
+      "currency": "INR",
+      "status": "pending",
+      "createdAt": "2026-08-03T01:00:00+05:30"
+    },
+    {
+      "id": "s-001",
+      "tenant": "south",
+      "campaignId": "s-search",
+      "amountPaise": 200000,
+      "currency": "INR",
+      "status": "paid",
+      "createdAt": "2026-08-01T21:00:00Z"
+    },
+    {
+      "id": "s-002",
+      "tenant": "south",
+      "campaignId": "s-search",
+      "amountPaise": 70000,
+      "currency": "INR",
+      "status": "pending",
+      "createdAt": "2026-08-02T01:00:00Z"
+    },
+    {
+      "id": "s-003",
+      "tenant": "south",
+      "campaignId": "s-search",
+      "amountPaise": 50000,
+      "currency": "INR",
+      "status": "paid",
+      "createdAt": "2026-08-02T02:00:00Z"
+    }
+  ],
+  "refunds": [
+    {
+      "id": "r-n-1",
+      "tenant": "north",
+      "orderId": "n-002",
+      "amountPaise": 30000,
+      "status": "settled",
+      "occurredAt": "2026-08-04T08:00:00Z"
+    },
+    {
+      "id": "r-n-2",
+      "tenant": "north",
+      "orderId": "n-001",
+      "amountPaise": 10000,
+      "status": "pending",
+      "occurredAt": "2026-08-04T08:00:00Z"
+    },
+    {
+      "id": "r-s-1",
+      "tenant": "south",
+      "orderId": "s-003",
+      "amountPaise": 50000,
+      "status": "settled",
+      "occurredAt": "2026-08-04T08:00:00Z"
+    }
+  ],
+  "adMetrics": [
+    {
+      "tenant": "north",
+      "campaignId": "n-search",
+      "day": "2026-08-01",
+      "spendPaise": 30000,
+      "reportedConversions": 4,
+      "reportedRevenuePaise": 400000
+    },
+    {
+      "tenant": "north",
+      "campaignId": "n-search",
+      "day": "2026-08-02",
+      "spendPaise": 10000,
+      "reportedConversions": 2,
+      "reportedRevenuePaise": 180000
+    },
+    {
+      "tenant": "north",
+      "campaignId": "n-social",
+      "day": "2026-08-02",
+      "spendPaise": 15000,
+      "reportedConversions": 3,
+      "reportedRevenuePaise": 450000
+    },
+    {
+      "tenant": "south",
+      "campaignId": "s-search",
+      "day": "2026-08-02",
+      "spendPaise": 40000,
+      "reportedConversions": 4,
+      "reportedRevenuePaise": 600000
+    }
+  ],
+  "paymentEvents": [
+    {
+      "eventId": "e-n1",
+      "paymentId": "p-n1",
+      "orderId": "n-001",
+      "tenant": "north",
+      "status": "succeeded",
+      "amountPaise": 100000,
+      "currency": "INR",
+      "occurredAt": "2026-08-01T18:26:00Z"
+    },
+    {
+      "eventId": "e-n1",
+      "paymentId": "p-n1",
+      "orderId": "n-001",
+      "tenant": "north",
+      "status": "succeeded",
+      "amountPaise": 100000,
+      "currency": "INR",
+      "occurredAt": "2026-08-01T18:26:00Z"
+    },
+    {
+      "eventId": "e-n1-retry",
+      "paymentId": "p-n1",
+      "orderId": "n-001",
+      "tenant": "north",
+      "status": "succeeded",
+      "amountPaise": 100000,
+      "currency": "INR",
+      "occurredAt": "2026-08-01T18:27:00Z"
+    },
+    {
+      "eventId": "e-n1-late",
+      "paymentId": "p-n1",
+      "orderId": "n-001",
+      "tenant": "north",
+      "status": "failed",
+      "amountPaise": 100000,
+      "currency": "INR",
+      "occurredAt": "2026-08-03T01:00:00Z"
+    },
+    {
+      "eventId": "e-n2",
+      "paymentId": "p-n2",
+      "orderId": "n-002",
+      "tenant": "north",
+      "status": "succeeded",
+      "amountPaise": 150000,
+      "currency": "INR",
+      "occurredAt": "2026-08-01T18:36:00Z"
+    },
+    {
+      "eventId": "e-n4",
+      "paymentId": "p-n4",
+      "orderId": "n-004",
+      "tenant": "north",
+      "status": "failed",
+      "amountPaise": 60000,
+      "currency": "INR",
+      "occurredAt": "2026-08-01T20:31:00Z"
+    },
+    {
+      "eventId": "e-s1",
+      "paymentId": "p-s1",
+      "orderId": "s-001",
+      "tenant": "south",
+      "status": "succeeded",
+      "amountPaise": 200000,
+      "currency": "INR",
+      "occurredAt": "2026-08-01T21:01:00Z"
+    },
+    {
+      "eventId": "e-s3",
+      "paymentId": "p-s3",
+      "orderId": "s-003",
+      "tenant": "south",
+      "status": "succeeded",
+      "amountPaise": 50000,
+      "currency": "INR",
+      "occurredAt": "2026-08-02T02:01:00Z"
+    }
+  ],
+  "payments": [
+    {
+      "tenant": "north",
+      "paymentId": "p-n1",
+      "orderId": "n-001",
+      "status": "succeeded",
+      "amountPaise": 100000
+    },
+    {
+      "tenant": "north",
+      "paymentId": "p-n2",
+      "orderId": "n-002",
+      "status": "succeeded",
+      "amountPaise": 150000
+    },
+    {
+      "tenant": "north",
+      "paymentId": "p-n4",
+      "orderId": "n-004",
+      "status": "failed",
+      "amountPaise": 60000
+    },
+    {
+      "tenant": "south",
+      "paymentId": "p-s1",
+      "orderId": "s-001",
+      "status": "succeeded",
+      "amountPaise": 200000
+    },
+    {
+      "tenant": "south",
+      "paymentId": "p-s3",
+      "orderId": "s-003",
+      "status": "succeeded",
+      "amountPaise": 50000
+    }
+  ]
+}

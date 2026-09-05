@@ -1,0 +1,36 @@
+{
+  "name": "lead-engineer-assessment",
+  "version": "1.0.0",
+  "private": true,
+  "engines": {
+    "node": ">=22.13.0"
+  },
+  "scripts": {
+    "dev": "node scripts/run.mjs dev",
+    "build": "node scripts/build.mjs",
+    "start": "node scripts/run.mjs start",
+    "api": "node server/index.mjs",
+    "db:reset": "node server/reset.mjs",
+    "db:performance": "node scripts/performance.mjs",
+    "test": "node --test tests/package.test.mjs tests/api-smoke.test.mjs tests/database.test.mjs tests/operator-safety.test.mjs",
+    "test:challenge": "node --test tests/challenge.acceptance.test.mjs",
+    "test:e2e": "playwright test",
+    "typecheck": "tsc --noEmit",
+    "doctor": "node scripts/doctor.mjs",
+    "session": "node scripts/session.mjs",
+    "submit:check": "node scripts/submission-check.mjs"
+  },
+  "dependencies": {
+    "next": "16.3.4",
+    "react": "19.2.8",
+    "react-dom": "19.2.8",
+    "pg": "8.16.3"
+  },
+  "devDependencies": {
+    "@playwright/test": "1.58.2",
+    "typescript": "5.9.3",
+    "@types/node": "22.19.15",
+    "@types/react": "19.2.14",
+    "@types/react-dom": "19.2.3"
+  }
+}

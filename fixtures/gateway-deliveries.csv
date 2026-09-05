@@ -1,0 +1,9 @@
+eventId,paymentId,orderId,tenant,status,amountPaise,currency,occurredAt
+e-n1,p-n1,n-001,north,succeeded,100000,INR,2026-08-01T18:26:00Z
+e-n1,p-n1,n-001,north,succeeded,100000,INR,2026-08-01T18:26:00Z
+e-n1-retry,p-n1,n-001,north,succeeded,100000,INR,2026-08-01T18:27:00Z
+e-n1-late,p-n1,n-001,north,failed,100000,INR,2026-08-03T01:00:00Z
+e-n2,p-n2,n-002,north,succeeded,150000,INR,2026-08-01T18:36:00Z
+e-n4,p-n4,n-004,north,failed,60000,INR,2026-08-01T20:31:00Z
+e-s1,p-s1,s-001,south,succeeded,200000,INR,2026-08-01T21:01:00Z
+e-s3,p-s3,s-003,south,succeeded,50000,INR,2026-08-02T02:01:00Z

@@ -1,0 +1,4 @@
+id,tenant,orderId,amountPaise,status,occurredAt
+r-n-1,north,n-002,30000,settled,2026-08-04T08:00:00Z
+r-n-2,north,n-001,10000,pending,2026-08-04T08:00:00Z
+r-s-1,south,s-003,50000,settled,2026-08-04T08:00:00Z

@@ -1,0 +1,43 @@
+diff --git a/src/routes/reminder-preview.ts b/src/routes/reminder-preview.ts
+new file mode 100644
+--- /dev/null
++++ b/src/routes/reminder-preview.ts
+@@ -0,0 +1,38 @@
++router.post('/reminders/preview', async (req, res) => {
++  const { tenant, invoiceIds, requestId } = req.body;
++  try {
++    await pool.query('BEGIN');
++    const prior = await pool.query(
++      `SELECT * FROM preview_batches WHERE request_id = '${requestId}'`
++    );
++    if (prior.rows.length) return res.json({ ok: true, replay: true });
++    let totalPaise = 0;
++    await Promise.all(invoiceIds.map(async (id) => {
++      const result = await pool.query(
++        `SELECT * FROM invoices WHERE id = '${id}'`
++      );
++      const invoice = result.rows[0];
++      if (invoice.status === 'paid') return;
++      const priorJob = await pool.query(
++        `SELECT id FROM preview_jobs WHERE invoice_id = '${id}'`
++      );
++      if (!priorJob.rows.length) {
++        await previewAdapter.create({ tenant, invoiceId: id,
++          amountPaise: invoice.amountPaise });
++        await pool.query(
++          `INSERT INTO preview_jobs (tenant, invoice_id) VALUES ('${tenant}', '${id}')`
++        );
++      }
++      totalPaise += Number(invoice.amountPaise);
++    }));
++    await pool.query(
++      `INSERT INTO preview_batches (request_id) VALUES ('${requestId}')`
++    );
++    await pool.query('COMMIT');
++    return res.json({ ok: true, processed: invoiceIds.length, totalPaise });
++  } catch (error) {
++    await pool.query('ROLLBACK');
++    console.log('preview recovered');
++    return res.status(200).json({ ok: true, processed: 0 });
++  }
++});

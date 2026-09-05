@@ -1,0 +1,9 @@
+id,tenant,campaignId,amountPaise,currency,status,createdAt
+n-001,north,n-search,100000,INR,paid,2026-08-01T23:55:00+05:30
+n-002,north,n-social,150000,INR,paid,2026-08-02T00:05:00+05:30
+n-003,north,n-search,90000,INR,pending,2026-08-02T01:00:00+05:30
+n-004,north,n-social,60000,INR,failed,2026-08-02T02:00:00+05:30
+n-005,north,n-search,80000,INR,pending,2026-08-03T01:00:00+05:30
+s-001,south,s-search,200000,INR,paid,2026-08-01T21:00:00Z
+s-002,south,s-search,70000,INR,pending,2026-08-02T01:00:00Z
+s-003,south,s-search,50000,INR,paid,2026-08-02T02:00:00Z

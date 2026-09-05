@@ -1,0 +1,1260 @@
+{
+  "schemaVersion": "cognitive-assessment-v1",
+  "assessmentId": "lead-reasoning-50",
+  "assessmentVersion": "1.0.0",
+  "title": "Reasoning under constraints",
+  "timeLimitSeconds": 2400,
+  "instructions": [
+    "Work independently for 40 minutes. No AI assistants, search engines, external references, calculators, code, or help from another person. Blank paper and a pen are allowed. Arrange accessibility accommodations with the interviewer before starting.",
+    "Use only the information supplied. Treat stated rules as exact unless the passage explicitly describes uncertainty. Do not import outside facts. MCQ and true/false items require one choice; select-all items require every supported choice and no others.",
+    "You may revisit questions and leave items blank. The first 47 items contribute equally to a separate reasoning raw score, normalized to 15 points; select-all uses exact match, with no partial credit and no negative marking. The last three judgment items are discussion prompts for human review, not an automatic honesty finding or hiring decision.",
+    "Use only the pseudonymous candidate ID supplied by the interviewer, not your name, email, telephone number, or resume. No real candidates or results were collected in creating this assessment.",
+    "The browser downloads an answer snapshot; it does not submit responses to a server or calculate a score. Hand the downloaded file privately to your interviewer using your agreed file-handover method. Do not post it to GitHub.",
+    "The local timer and storage are convenience aids, not tamperproof proctoring. Use one tab and keep the device clock unchanged. Time continues if the tab is closed. Refresh does not restart a saved attempt. If storage is unavailable, keep the page open and download backups; closing it can lose your work.",
+    "You may finish early after confirmation. At 40 minutes inputs lock, but download remains available. An interim export does not finish the attempt. This is an unnormed work-sample reasoning exercise, not an IQ test or a validated psychometric instrument."
+  ],
+  "sections": [
+    {
+      "id": "reading",
+      "title": "Reading and causal inference",
+      "suggestedMinutes": 16
+    },
+    {
+      "id": "quantitative",
+      "title": "Quantitative reasoning",
+      "suggestedMinutes": 8
+    },
+    {
+      "id": "data",
+      "title": "Data interpretation",
+      "suggestedMinutes": 5
+    },
+    {
+      "id": "logic",
+      "title": "Logical constraints",
+      "suggestedMinutes": 6
+    },
+    {
+      "id": "argument",
+      "title": "Argument evaluation",
+      "suggestedMinutes": 3
+    },
+    {
+      "id": "integrity",
+      "title": "Judgment and disclosure",
+      "suggestedMinutes": 2
+    }
+  ],
+  "passages": [
+    {
+      "id": "P1",
+      "title": "The later closing time",
+      "text": "A town tested whether keeping reading rooms open later would increase visits. Eight branches volunteered. A lottery assigned four to close two hours later for six weeks; the other four retained their usual hours. All branches counted entries using the same procedure, and visitors were not told which branches were being evaluated. Total visits rose at the later-closing branches and fell slightly at the others. The later-closing branches also reported that some evening visitors had previously used another branch earlier in the day.\n\nThe coordinator called the result encouraging but resisted two claims. First, a rise at the selected branches need not equal a rise across the town: a person changing branches can raise one count while lowering another. Second, the volunteers might differ from branches that declined the experiment. The lottery improves comparison within the participating group; it does not turn volunteers into a representative sample of every branch.\n\nFor a second trial, the coordinator proposed recording anonymous repeat-visit patterns across all branches and inviting branches that had not volunteered. She also wanted to examine whether any change survived after the novelty of the longer hours faded. None of those proposed measurements had yet been collected."
+    },
+    {
+      "id": "P2",
+      "title": "The archive that survived",
+      "text": "An historian found a collection of letters written by residents of a coastal village during a difficult winter. Most surviving letters praised the village council for distributing food fairly. A popular account treated this as proof that nearly every resident approved of the council. The historian noticed, however, that the collection had been assembled by a council secretary who asked satisfied households to send accounts of their experiences. The archive contained no list of households approached, no response rate, and almost no letters from people who could not write.\n\nThis did not make the letters false. Several described specific deliveries that were independently recorded in a warehouse ledger. But confirming those deliveries did not establish how common the writers' satisfaction was. Evidence can be reliable about an event while being selective about whose interpretation survives.\n\nThe historian therefore separated three questions: whether particular deliveries happened, whether the distribution rules were applied consistently, and how residents felt about the rules. The ledger could help with the first question and, with suitable comparisons, the second. It could not directly reveal unrecorded opinions. She recommended seeking complaints, oral accounts preserved elsewhere, and records from households omitted from the collection, while warning that a second selective archive would not automatically solve the problem."
+    },
+    {
+      "id": "P3",
+      "title": "A warning rule",
+      "text": "A valley committee must decide when to issue a flood warning. Its written rule says to issue a warning if and only if both the river gauge is above its threshold and an upstream observer reports rapid rise. The two conditions are evaluated at the same scheduled checkpoint. The rule was chosen to limit unnecessary warnings, not because either signal alone was believed to be useless. Gauge readings are logged automatically; observer reports arrive by radio and can be delayed.\n\nDuring a practice session, the gauge exceeded its threshold but the observer's message had not arrived. A recorder wrote, \"The warning conditions are not yet established.\" A supervisor replaced this with, \"There is no flood risk.\" The committee later rejected that replacement. A missing report is not the same as a report of no rapid rise, and the warning rule is not a definition of whether a flood can occur.\n\nThe committee retained the rule for the exercise but required separate labels for a negative report, a missing report, and a positive report. It also asked for a later study comparing warnings with actual outcomes. Until that study exists, the exercise provides information about compliance with the stated procedure, not a numerical estimate of how accurately it predicts floods."
+    },
+    {
+      "id": "P4",
+      "title": "Choosing without probabilities",
+      "text": "A small island must choose one storage plan before the next season. Planners agree that the season will be dry, ordinary, or wet, but they have no agreed probabilities for these cases. They measure each plan by a loss index, where lower is better. Plan L has losses of 2 in a dry season, 5 in an ordinary season, and 11 in a wet season. Plan M has losses of 6, 6, and 6 respectively. Plan N has losses of 10, 4, and 3 respectively. These values include every consequence the exercise asks the planners to consider.\n\nOne committee member wants to minimize the worst possible loss. Another wants to minimize the average loss, while assigning equal weight to the three seasons. Both preferences are coherent decision rules, but equal weights are an additional choice, not evidence that the seasons are equally likely. A third member says a plan should be discarded whenever another plan has no greater loss in any season and a smaller loss in at least one.\n\nThe chair asks members to state their rules before seeing which plan each rule favors. She notes that agreement about the table need not produce agreement about the decision. Disagreement can arise from different treatment of uncertainty rather than from a calculation error."
+    },
+    {
+      "id": "P5",
+      "title": "Copies and independence",
+      "text": "A seed archive stored duplicate samples in two rooms of the same building. After a roof failure damaged both rooms, a review found that the duplication had protected against a mislabeled drawer but not against a building-wide event. The director proposed sending one copy to a distant archive. A colleague replied that distance alone would not guarantee independence: both archives might use the same faulty drying procedure or depend on the same supplier of storage containers.\n\nThe review distinguished copying an object from diversifying the ways its copies could fail. A second copy is useful when the failures it can survive differ from those threatening the first. The reviewers did not argue that all shared procedures should be abandoned. Standard labels, for example, could make samples easier to locate without being responsible for the roof failure. They asked instead which dependencies could damage both copies and what evidence supported each proposed safeguard.\n\nThe final recommendation was to retain clear common labels, separate the physical sites, and test the drying procedure using an independent method. It was a proposal, not a completed intervention. No subsequent survival data were available. The director therefore described the changes as responses to identified vulnerabilities, not as proof that future loss had become impossible."
+    }
+  ],
+  "stimuli": [
+    {
+      "id": "D1",
+      "title": "Two methods, different case mixes",
+      "text": "Each case is either easy or hard. A success is counted once per case. The following are complete observed counts, not a randomized trial. Method choice may be related to difficulty. For Q32 only, assume each observed within-difficulty success rate will remain exactly the same when reweighted to an equal mix of easy and hard cases.\n\n| Method | Easy successes | Easy cases | Hard successes | Hard cases |\n| --- | ---: | ---: | ---: | ---: |\n| P | 81 | 90 | 1 | 10 |\n| Q | 9 | 10 | 18 | 90 |\n\nA percentage-point difference is a subtraction of percentages, not a percentage change relative to a baseline."
+    },
+    {
+      "id": "D2",
+      "title": "Arrival times",
+      "text": "Forty shipments are equally weighted. Eight arrive in 1 day, twenty arrive in 2 days, and twelve arrive in 5 days. Every shipment belongs to exactly one of these groups. For Q36, the only allowed change is to move whole shipments from the 5-day group to the 2-day group; the total shipment count remains forty."
+    },
+    {
+      "id": "L1",
+      "title": "Six positions",
+      "text": "Place tasks A, B, C, D, E, and F into positions 1 through 6, using every task exactly once. All of the following rules must hold: A is before C; B is immediately before D; E is neither first nor last; C is before F. \"Before\" need not mean immediately before unless stated. There are no other restrictions. Q37–Q40 all use these rules; an extra condition in one question does not carry into another."
+    }
+  ],
+  "questions": [
+    {
+      "id": "Q01",
+      "section": "reading",
+      "type": "mcq",
+      "prompt": "Which conclusion best respects the coordinator's distinction?",
+      "options": [
+        {
+          "id": "A",
+          "text": "The trial establishes an equal increase in visits at every branch."
+        },
+        {
+          "id": "B",
+          "text": "The observed branch-level change is encouraging, but town-wide additional visits remain unresolved."
+        },
+        {
+          "id": "C",
+          "text": "The lottery makes every participating branch representative of the town."
+        },
+        {
+          "id": "D",
+          "text": "Any movement between branches makes the comparison entirely worthless."
+        }
+      ],
+      "passageId": "P1"
+    },
+    {
+      "id": "Q02",
+      "section": "reading",
+      "type": "boolean",
+      "prompt": "According to the passage, random assignment among the volunteers by itself makes the volunteers representative of all branches.",
+      "options": [
+        {
+          "id": "A",
+          "text": "True"
+        },
+        {
+          "id": "B",
+          "text": "False"
+        }
+      ],
+      "passageId": "P1"
+    },
+    {
+      "id": "Q03",
+      "section": "reading",
+      "type": "select-all",
+      "prompt": "Which proposed observations would address a limitation explicitly identified in the passage?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Anonymous movement and repeat visits across branches."
+        },
+        {
+          "id": "B",
+          "text": "Visits after the novelty period has passed."
+        },
+        {
+          "id": "C",
+          "text": "Only the largest single-day count at a later-closing branch."
+        },
+        {
+          "id": "D",
+          "text": "Participation and outcomes of branches that previously declined."
+        }
+      ],
+      "passageId": "P1"
+    },
+    {
+      "id": "Q04",
+      "section": "reading",
+      "type": "mcq",
+      "prompt": "Suppose every extra visit at a later-closing branch replaced a visit that would otherwise have occurred at another town branch. Holding all other visits fixed, what follows?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Town-wide visits increased by the observed treated-branch gain."
+        },
+        {
+          "id": "B",
+          "text": "Town-wide visits necessarily fell."
+        },
+        {
+          "id": "C",
+          "text": "The reallocation itself produced no net increase in town-wide visits."
+        },
+        {
+          "id": "D",
+          "text": "The later hours could not have affected anyone's choice of branch."
+        }
+      ],
+      "passageId": "P1"
+    },
+    {
+      "id": "Q05",
+      "section": "reading",
+      "type": "mcq",
+      "prompt": "What is the principal weakness in the popular account?",
+      "options": [
+        {
+          "id": "A",
+          "text": "It assumes letters can never accurately describe deliveries."
+        },
+        {
+          "id": "B",
+          "text": "It generalizes from a collection assembled to favor satisfied households."
+        },
+        {
+          "id": "C",
+          "text": "It assumes a warehouse ledger contains no factual information."
+        },
+        {
+          "id": "D",
+          "text": "It doubts that an archive can survive a difficult winter."
+        }
+      ],
+      "passageId": "P2"
+    },
+    {
+      "id": "Q06",
+      "section": "reading",
+      "type": "mcq",
+      "prompt": "The ledger confirms a delivery described in a letter. What does this most directly strengthen?",
+      "options": [
+        {
+          "id": "A",
+          "text": "The claim that the described delivery occurred."
+        },
+        {
+          "id": "B",
+          "text": "The claim that nearly all residents approved of the council."
+        },
+        {
+          "id": "C",
+          "text": "The claim that every household received the same amount."
+        },
+        {
+          "id": "D",
+          "text": "The claim that no omitted household complained."
+        }
+      ],
+      "passageId": "P2"
+    },
+    {
+      "id": "Q07",
+      "section": "reading",
+      "type": "boolean",
+      "prompt": "The historian's position permits a letter to be factually accurate about a delivery yet unsuitable for estimating village-wide approval.",
+      "options": [
+        {
+          "id": "A",
+          "text": "True"
+        },
+        {
+          "id": "B",
+          "text": "False"
+        }
+      ],
+      "passageId": "P2"
+    },
+    {
+      "id": "Q08",
+      "section": "reading",
+      "type": "mcq",
+      "prompt": "Why does the historian warn about a second selective archive?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Any additional evidence must contradict the letters."
+        },
+        {
+          "id": "B",
+          "text": "Only written evidence can reveal residents' opinions."
+        },
+        {
+          "id": "C",
+          "text": "Two collections necessarily cancel each other's selection biases."
+        },
+        {
+          "id": "D",
+          "text": "Additional evidence can still omit relevant perspectives through its own selection process."
+        }
+      ],
+      "passageId": "P2"
+    },
+    {
+      "id": "Q09",
+      "section": "reading",
+      "type": "mcq",
+      "prompt": "At a checkpoint, the gauge is above threshold and the observer reports rapid rise. Under the stated rule, what is required?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Wait for a second checkpoint regardless of the two signals."
+        },
+        {
+          "id": "B",
+          "text": "Issue a warning."
+        },
+        {
+          "id": "C",
+          "text": "Issue a warning only if a flood is already confirmed."
+        },
+        {
+          "id": "D",
+          "text": "Conclude that flooding is impossible."
+        }
+      ],
+      "passageId": "P3"
+    },
+    {
+      "id": "Q10",
+      "section": "reading",
+      "type": "select-all",
+      "prompt": "Which statements follow from the passage?",
+      "options": [
+        {
+          "id": "A",
+          "text": "A missing report and a negative report must be labeled differently."
+        },
+        {
+          "id": "B",
+          "text": "No warning proves that there is no flood risk."
+        },
+        {
+          "id": "C",
+          "text": "Procedure compliance and predictive accuracy are different questions."
+        },
+        {
+          "id": "D",
+          "text": "The exercise has already established the rule's numerical prediction accuracy."
+        }
+      ],
+      "passageId": "P3"
+    },
+    {
+      "id": "Q11",
+      "section": "reading",
+      "type": "mcq",
+      "prompt": "Which additional record is most directly needed for the proposed predictive-accuracy study?",
+      "options": [
+        {
+          "id": "A",
+          "text": "The handwriting style of the recorder."
+        },
+        {
+          "id": "B",
+          "text": "Only checkpoints at which a warning was issued."
+        },
+        {
+          "id": "C",
+          "text": "Actual flood outcomes matched to checkpoints with and without warnings."
+        },
+        {
+          "id": "D",
+          "text": "The number of committee members who liked the rule."
+        }
+      ],
+      "passageId": "P3"
+    },
+    {
+      "id": "Q12",
+      "section": "reading",
+      "type": "boolean",
+      "prompt": "At a checkpoint with a below-threshold gauge and a positive observer report, the stated rule requires a warning.",
+      "options": [
+        {
+          "id": "A",
+          "text": "True"
+        },
+        {
+          "id": "B",
+          "text": "False"
+        }
+      ],
+      "passageId": "P3"
+    },
+    {
+      "id": "Q13",
+      "section": "reading",
+      "type": "mcq",
+      "prompt": "Which plan uniquely minimizes the worst possible loss?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Plan L"
+        },
+        {
+          "id": "B",
+          "text": "Plan M"
+        },
+        {
+          "id": "C",
+          "text": "Plan N"
+        },
+        {
+          "id": "D",
+          "text": "All three tie"
+        }
+      ],
+      "passageId": "P4"
+    },
+    {
+      "id": "Q14",
+      "section": "reading",
+      "type": "mcq",
+      "prompt": "Using the second member's equal weights, which plan has the smallest average loss?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Plan L"
+        },
+        {
+          "id": "B",
+          "text": "Plan M"
+        },
+        {
+          "id": "C",
+          "text": "Plan N"
+        },
+        {
+          "id": "D",
+          "text": "All three tie"
+        }
+      ],
+      "passageId": "P4"
+    },
+    {
+      "id": "Q15",
+      "section": "reading",
+      "type": "boolean",
+      "prompt": "The table proves that dry, ordinary, and wet seasons are equally likely.",
+      "options": [
+        {
+          "id": "A",
+          "text": "True"
+        },
+        {
+          "id": "B",
+          "text": "False"
+        }
+      ],
+      "passageId": "P4"
+    },
+    {
+      "id": "Q16",
+      "section": "reading",
+      "type": "select-all",
+      "prompt": "Which statements are supported by the table and the stated rules?",
+      "options": [
+        {
+          "id": "A",
+          "text": "No plan can be discarded by the third member's rule."
+        },
+        {
+          "id": "B",
+          "text": "M has lower loss than N in every season."
+        },
+        {
+          "id": "C",
+          "text": "The worst-loss and equal-weight rules select different plans."
+        },
+        {
+          "id": "D",
+          "text": "L has the lowest loss in the dry case."
+        }
+      ],
+      "passageId": "P4"
+    },
+    {
+      "id": "Q17",
+      "section": "reading",
+      "type": "mcq",
+      "prompt": "Which distinction is central to the review?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Having multiple copies versus reducing common causes of failure."
+        },
+        {
+          "id": "B",
+          "text": "Using labels versus recording no information at all."
+        },
+        {
+          "id": "C",
+          "text": "Proof of future safety versus proof that copies are always useless."
+        },
+        {
+          "id": "D",
+          "text": "Local storage versus the impossibility of storing anything remotely."
+        }
+      ],
+      "passageId": "P5"
+    },
+    {
+      "id": "Q18",
+      "section": "reading",
+      "type": "mcq",
+      "prompt": "Which finding would most directly challenge the claim that distance alone makes the copies independent?",
+      "options": [
+        {
+          "id": "A",
+          "text": "The two sites use different street addresses."
+        },
+        {
+          "id": "B",
+          "text": "A defect in their shared drying procedure can spoil samples at both sites."
+        },
+        {
+          "id": "C",
+          "text": "Staff can read the same clear labels at both sites."
+        },
+        {
+          "id": "D",
+          "text": "One archive has more shelves than the other."
+        }
+      ],
+      "passageId": "P5"
+    },
+    {
+      "id": "Q19",
+      "section": "reading",
+      "type": "mcq",
+      "prompt": "Why retain common labels while changing other dependencies?",
+      "options": [
+        {
+          "id": "A",
+          "text": "The review concluded every shared feature guarantees safety."
+        },
+        {
+          "id": "B",
+          "text": "The labels have already been proved to prevent all loss."
+        },
+        {
+          "id": "C",
+          "text": "The roof failure was caused by inconsistent labels."
+        },
+        {
+          "id": "D",
+          "text": "A shared feature can be useful without being the common damaging cause under examination."
+        }
+      ],
+      "passageId": "P5"
+    },
+    {
+      "id": "Q20",
+      "section": "reading",
+      "type": "boolean",
+      "prompt": "The final recommendation is reported as having already eliminated all future loss.",
+      "options": [
+        {
+          "id": "A",
+          "text": "True"
+        },
+        {
+          "id": "B",
+          "text": "False"
+        }
+      ],
+      "passageId": "P5"
+    },
+    {
+      "id": "Q21",
+      "section": "quantitative",
+      "type": "mcq",
+      "prompt": "A container holds 30 litres of a perfectly mixed liquid that is 20% concentrate by volume. Remove 6 litres of the mixture and replace it with 6 litres of water. Then add pure concentrate until the mixture is 25% concentrate. Assume volumes add exactly. How many litres of pure concentrate must be added?",
+      "options": [
+        {
+          "id": "A",
+          "text": "2.7 litres"
+        },
+        {
+          "id": "B",
+          "text": "3.6 litres"
+        },
+        {
+          "id": "C",
+          "text": "4.8 litres"
+        },
+        {
+          "id": "D",
+          "text": "6 litres"
+        }
+      ]
+    },
+    {
+      "id": "Q22",
+      "section": "quantitative",
+      "type": "mcq",
+      "prompt": "Working alone at constant rates, A completes a task in 12 hours and B in 18 hours. When working together, their rates add. They work together for 3 hours, then B stops. How many additional hours does A need to finish?",
+      "options": [
+        {
+          "id": "A",
+          "text": "5 hours"
+        },
+        {
+          "id": "B",
+          "text": "6 hours"
+        },
+        {
+          "id": "C",
+          "text": "7 hours"
+        },
+        {
+          "id": "D",
+          "text": "9 hours"
+        }
+      ]
+    },
+    {
+      "id": "Q23",
+      "section": "quantitative",
+      "type": "boolean",
+      "prompt": "A positive quantity increased by 20% and then decreased by 20% of its new value returns to its original value.",
+      "options": [
+        {
+          "id": "A",
+          "text": "True"
+        },
+        {
+          "id": "B",
+          "text": "False"
+        }
+      ]
+    },
+    {
+      "id": "Q24",
+      "section": "quantitative",
+      "type": "mcq",
+      "prompt": "How many distinct three-digit positive integers can be formed from the digits 1, 2, 3, and 4, with no repeated digit, such that the integer is divisible by 6? An integer is divisible by 6 exactly when it is even and its digit sum is divisible by 3.",
+      "options": [
+        {
+          "id": "A",
+          "text": "4"
+        },
+        {
+          "id": "B",
+          "text": "6"
+        },
+        {
+          "id": "C",
+          "text": "8"
+        },
+        {
+          "id": "D",
+          "text": "12"
+        }
+      ]
+    },
+    {
+      "id": "Q25",
+      "section": "quantitative",
+      "type": "mcq",
+      "prompt": "Choose one of two jars with equal probability, then draw one token uniformly from it. Jar A contains 4 red and 1 blue token; jar B contains 2 red and 3 blue tokens. The drawn token is red. What is the probability that jar A was chosen?",
+      "options": [
+        {
+          "id": "A",
+          "text": "1/2"
+        },
+        {
+          "id": "B",
+          "text": "3/5"
+        },
+        {
+          "id": "C",
+          "text": "2/3"
+        },
+        {
+          "id": "D",
+          "text": "4/5"
+        }
+      ]
+    },
+    {
+      "id": "Q26",
+      "section": "quantitative",
+      "type": "mcq",
+      "prompt": "A group buys 21 tickets. Each adult ticket costs 7 units and each child ticket costs 4 units. The total cost is 117 units, with no fees or discounts. How many adult tickets were bought?",
+      "options": [
+        {
+          "id": "A",
+          "text": "9"
+        },
+        {
+          "id": "B",
+          "text": "10"
+        },
+        {
+          "id": "C",
+          "text": "11"
+        },
+        {
+          "id": "D",
+          "text": "12"
+        }
+      ]
+    },
+    {
+      "id": "Q27",
+      "section": "quantitative",
+      "type": "select-all",
+      "prompt": "A traveler covers 60 km at 30 km/h and then 60 km at 60 km/h, without stopping. Which statements are true? Average speed means total distance divided by total travel time.",
+      "options": [
+        {
+          "id": "A",
+          "text": "The total travel time is 3 hours."
+        },
+        {
+          "id": "B",
+          "text": "The average speed for the journey is 45 km/h."
+        },
+        {
+          "id": "C",
+          "text": "The average speed for the journey is 40 km/h."
+        },
+        {
+          "id": "D",
+          "text": "Doubling only the second-leg speed to 120 km/h would halve the total travel time."
+        }
+      ]
+    },
+    {
+      "id": "Q28",
+      "section": "quantitative",
+      "type": "mcq",
+      "prompt": "For an integer quantity n from 1 through 12, revenue is 14n units and total cost is n² + 24 units. Profit means revenue minus cost. What is the smallest permitted n producing profit of at least 21 units?",
+      "options": [
+        {
+          "id": "A",
+          "text": "4"
+        },
+        {
+          "id": "B",
+          "text": "5"
+        },
+        {
+          "id": "C",
+          "text": "7"
+        },
+        {
+          "id": "D",
+          "text": "9"
+        }
+      ]
+    },
+    {
+      "id": "Q29",
+      "section": "quantitative",
+      "type": "mcq",
+      "prompt": "A bag has 3 marked and 2 unmarked tokens. Two distinct tokens are drawn uniformly without replacement. What is the probability of drawing exactly one marked token?",
+      "options": [
+        {
+          "id": "A",
+          "text": "2/5"
+        },
+        {
+          "id": "B",
+          "text": "1/2"
+        },
+        {
+          "id": "C",
+          "text": "3/5"
+        },
+        {
+          "id": "D",
+          "text": "3/4"
+        }
+      ]
+    },
+    {
+      "id": "Q30",
+      "section": "quantitative",
+      "type": "mcq",
+      "prompt": "The five values 4, 7, 9, 10, and 15 have mean 9. A sixth value is added, making the mean 10. What is the median of the resulting six values? For an even number of sorted values, the median is the mean of the middle two.",
+      "options": [
+        {
+          "id": "A",
+          "text": "9"
+        },
+        {
+          "id": "B",
+          "text": "9.5"
+        },
+        {
+          "id": "C",
+          "text": "10"
+        },
+        {
+          "id": "D",
+          "text": "11"
+        }
+      ]
+    },
+    {
+      "id": "Q31",
+      "section": "data",
+      "type": "mcq",
+      "prompt": "What is P's observed overall success rate minus Q's, in percentage points?",
+      "options": [
+        {
+          "id": "A",
+          "text": "5 percentage points"
+        },
+        {
+          "id": "B",
+          "text": "27 percentage points"
+        },
+        {
+          "id": "C",
+          "text": "55 percentage points"
+        },
+        {
+          "id": "D",
+          "text": "82 percentage points"
+        }
+      ],
+      "stimulusId": "D1"
+    },
+    {
+      "id": "Q32",
+      "section": "data",
+      "type": "mcq",
+      "prompt": "Under the stated Q32 assumption, each method is applied to an equal mix of easy and hard cases. Which comparison results?",
+      "options": [
+        {
+          "id": "A",
+          "text": "P is higher by 55 percentage points."
+        },
+        {
+          "id": "B",
+          "text": "P is higher by 5 percentage points."
+        },
+        {
+          "id": "C",
+          "text": "They are equal."
+        },
+        {
+          "id": "D",
+          "text": "Q is higher by 5 percentage points."
+        }
+      ],
+      "stimulusId": "D1"
+    },
+    {
+      "id": "Q33",
+      "section": "data",
+      "type": "boolean",
+      "prompt": "P has a strictly higher success rate than Q within both difficulty groups.",
+      "options": [
+        {
+          "id": "A",
+          "text": "True"
+        },
+        {
+          "id": "B",
+          "text": "False"
+        }
+      ],
+      "stimulusId": "D1"
+    },
+    {
+      "id": "Q34",
+      "section": "data",
+      "type": "select-all",
+      "prompt": "Which statements are supported by the supplied counts and caveats?",
+      "options": [
+        {
+          "id": "A",
+          "text": "The overall rate comparison combines method and differing case mix."
+        },
+        {
+          "id": "B",
+          "text": "Within the observed hard cases, Q has the higher success rate."
+        },
+        {
+          "id": "C",
+          "text": "These nonrandomized counts alone prove that choosing P causes more successes."
+        },
+        {
+          "id": "D",
+          "text": "P and Q were each observed on 100 cases."
+        }
+      ],
+      "stimulusId": "D1"
+    },
+    {
+      "id": "Q35",
+      "section": "data",
+      "type": "mcq",
+      "prompt": "What is the mean arrival time over all forty shipments?",
+      "options": [
+        {
+          "id": "A",
+          "text": "2.4 days"
+        },
+        {
+          "id": "B",
+          "text": "2.7 days"
+        },
+        {
+          "id": "C",
+          "text": "3 days"
+        },
+        {
+          "id": "D",
+          "text": "4 days"
+        }
+      ],
+      "stimulusId": "D2"
+    },
+    {
+      "id": "Q36",
+      "section": "data",
+      "type": "mcq",
+      "prompt": "What is the minimum number of shipments that must move from the 5-day group to the 2-day group to bring the mean to at most 2.4 days?",
+      "options": [
+        {
+          "id": "A",
+          "text": "3"
+        },
+        {
+          "id": "B",
+          "text": "4"
+        },
+        {
+          "id": "C",
+          "text": "5"
+        },
+        {
+          "id": "D",
+          "text": "6"
+        }
+      ],
+      "stimulusId": "D2"
+    },
+    {
+      "id": "Q37",
+      "section": "logic",
+      "type": "mcq",
+      "prompt": "How many complete orders satisfy all the L1 rules?",
+      "options": [
+        {
+          "id": "A",
+          "text": "8"
+        },
+        {
+          "id": "B",
+          "text": "10"
+        },
+        {
+          "id": "C",
+          "text": "12"
+        },
+        {
+          "id": "D",
+          "text": "16"
+        }
+      ],
+      "stimulusId": "L1"
+    },
+    {
+      "id": "Q38",
+      "section": "logic",
+      "type": "mcq",
+      "prompt": "If E is in position 2 and F is in position 6, which statement must be true?",
+      "options": [
+        {
+          "id": "A",
+          "text": "A is in position 1."
+        },
+        {
+          "id": "B",
+          "text": "B is in position 3."
+        },
+        {
+          "id": "C",
+          "text": "C is in position 3."
+        },
+        {
+          "id": "D",
+          "text": "D is in position 5."
+        }
+      ],
+      "stimulusId": "L1"
+    },
+    {
+      "id": "Q39",
+      "section": "logic",
+      "type": "boolean",
+      "prompt": "Under the original L1 rules, B can occupy position 1.",
+      "options": [
+        {
+          "id": "A",
+          "text": "True"
+        },
+        {
+          "id": "B",
+          "text": "False"
+        }
+      ],
+      "stimulusId": "L1"
+    },
+    {
+      "id": "Q40",
+      "section": "logic",
+      "type": "select-all",
+      "prompt": "Which of these proposed positions can C occupy in at least one order satisfying the original L1 rules?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Position 1"
+        },
+        {
+          "id": "B",
+          "text": "Position 2"
+        },
+        {
+          "id": "C",
+          "text": "Position 4"
+        },
+        {
+          "id": "D",
+          "text": "Position 6"
+        }
+      ],
+      "stimulusId": "L1"
+    },
+    {
+      "id": "Q41",
+      "section": "logic",
+      "type": "mcq",
+      "prompt": "Each of three speakers is either truthful, meaning every statement they make here is true, or a liar, meaning every statement they make here is false. A says: \"B and C are the same type.\" B says: \"A is a liar.\" C says: \"B is truthful.\" Which assignment is consistent?",
+      "options": [
+        {
+          "id": "A",
+          "text": "A truthful; B truthful; C liar."
+        },
+        {
+          "id": "B",
+          "text": "A liar; B truthful; C truthful."
+        },
+        {
+          "id": "C",
+          "text": "A truthful; B liar; C liar."
+        },
+        {
+          "id": "D",
+          "text": "All three are liars."
+        }
+      ]
+    },
+    {
+      "id": "Q42",
+      "section": "logic",
+      "type": "select-all",
+      "prompt": "All glints are polished. Some polished objects are marked. No marked objects are heavy. \"Some\" means at least one, and a named class may otherwise be empty. Which conclusions must follow?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Some polished objects are not heavy."
+        },
+        {
+          "id": "B",
+          "text": "No glints are heavy."
+        },
+        {
+          "id": "C",
+          "text": "Some marked objects are polished."
+        },
+        {
+          "id": "D",
+          "text": "Some glints are marked."
+        }
+      ]
+    },
+    {
+      "id": "Q43",
+      "section": "logic",
+      "type": "mcq",
+      "prompt": "Choose any subset of projects A–E. Costs and benefits add, the budget is 10, and benefits are to be maximized. A costs 4 and benefits 7; B costs 3 and benefits 5; C costs 5 and benefits 10; D costs 2 and benefits 3; E costs 4 and benefits 6. C may be chosen only if A is chosen. B and E cannot both be chosen. Which subset has the unique highest total benefit?",
+      "options": [
+        {
+          "id": "A",
+          "text": "A and C"
+        },
+        {
+          "id": "B",
+          "text": "A, B, and D"
+        },
+        {
+          "id": "C",
+          "text": "A, D, and E"
+        },
+        {
+          "id": "D",
+          "text": "C and E"
+        }
+      ]
+    },
+    {
+      "id": "Q44",
+      "section": "argument",
+      "type": "mcq",
+      "prompt": "In a collection, every object coded Z has completed inspection. An object has completed inspection. A speaker concludes that it must be coded Z. Which option identifies the logical error?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Treating a condition required for Z as though it guarantees Z."
+        },
+        {
+          "id": "B",
+          "text": "Inferring that no coded objects have been inspected."
+        },
+        {
+          "id": "C",
+          "text": "Using a numerical average where a median is required."
+        },
+        {
+          "id": "D",
+          "text": "Denying the stated rule that every Z object is inspected."
+        }
+      ]
+    },
+    {
+      "id": "Q45",
+      "section": "argument",
+      "type": "mcq",
+      "prompt": "Consider the claim: \"Every town that extended its opening hours gained readers.\" Which single observation is a counterexample?",
+      "options": [
+        {
+          "id": "A",
+          "text": "A town did not extend its hours and gained readers."
+        },
+        {
+          "id": "B",
+          "text": "A town extended its hours and did not gain readers."
+        },
+        {
+          "id": "C",
+          "text": "A town extended its hours and gained readers."
+        },
+        {
+          "id": "D",
+          "text": "A town neither extended its hours nor gained readers."
+        }
+      ]
+    },
+    {
+      "id": "Q46",
+      "section": "argument",
+      "type": "mcq",
+      "prompt": "Two deterministic models classify a card as accepted or rejected, with no exceptions. Model R accepts if and only if the card is red. Model C accepts if and only if the card has a circle. You can test one card. Which card produces different predictions and therefore distinguishes the models?",
+      "options": [
+        {
+          "id": "A",
+          "text": "A red card with a circle."
+        },
+        {
+          "id": "B",
+          "text": "A blue card with a square."
+        },
+        {
+          "id": "C",
+          "text": "A red card with a square."
+        },
+        {
+          "id": "D",
+          "text": "Any card on which both models predict rejection."
+        }
+      ]
+    },
+    {
+      "id": "Q47",
+      "section": "argument",
+      "type": "select-all",
+      "prompt": "Whenever a parcel is sealed, it is registered. No registered parcel is anonymous. At least one parcel is sealed. Which conclusions necessarily follow?",
+      "options": [
+        {
+          "id": "A",
+          "text": "At least one registered parcel is not anonymous."
+        },
+        {
+          "id": "B",
+          "text": "No sealed parcel is anonymous."
+        },
+        {
+          "id": "C",
+          "text": "Every parcel that is not anonymous is sealed."
+        },
+        {
+          "id": "D",
+          "text": "No unsealed parcel is registered."
+        }
+      ]
+    },
+    {
+      "id": "Q48",
+      "section": "integrity",
+      "type": "mcq",
+      "prompt": "For this scenario, the reporting policy requires observed counts to be distinguished from estimates, discovered errors to be disclosed promptly to affected readers, and originals to be preserved with a correction trail. After a summary was circulated, you discover that its denominator was wrong. Which response follows all three requirements?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Silently replace the summary and delete its old version."
+        },
+        {
+          "id": "B",
+          "text": "Keep the summary unchanged because the conclusion might still be right."
+        },
+        {
+          "id": "C",
+          "text": "Notify affected readers, label the corrected observed counts, and preserve the original with an explicit correction note."
+        },
+        {
+          "id": "D",
+          "text": "Relabel every number as an estimate without identifying the error."
+        }
+      ]
+    },
+    {
+      "id": "Q49",
+      "section": "integrity",
+      "type": "mcq",
+      "prompt": "The no-AI assessment policy says that accidental exposure to outside assistance is not by itself misconduct, but the candidate must stop using it, disclose what happened to the interviewer, and follow the interviewer's continuation instructions. During the test an old assistant window unexpectedly displays a relevant solution. Which response follows that policy?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Copy the solution, then describe the answer as entirely unaided."
+        },
+        {
+          "id": "B",
+          "text": "Close the assistant, stop using the exposed solution, and disclose the exposure before continuing as instructed."
+        },
+        {
+          "id": "C",
+          "text": "Hide the exposure because it was accidental."
+        },
+        {
+          "id": "D",
+          "text": "Assume accidental exposure means the whole assessment must be permanently failed without discussion."
+        }
+      ]
+    },
+    {
+      "id": "Q50",
+      "section": "integrity",
+      "type": "select-all",
+      "prompt": "A handover policy says: label unverified claims; preserve relevant test evidence; separate observations from hypotheses; and do not describe a test as passed unless it actually ran and passed. Which entries comply? Select all that apply.",
+      "options": [
+        {
+          "id": "A",
+          "text": "\"I could not run this test; the behavior remains unverified. Here is the error log.\""
+        },
+        {
+          "id": "B",
+          "text": "\"Passed\" for a test that was not run, because the code looks correct."
+        },
+        {
+          "id": "C",
+          "text": "\"Observed: the test failed twice. Hypothesis: a timing issue; not yet established.\""
+        },
+        {
+          "id": "D",
+          "text": "\"All checks clean\" after deleting the only failing test and its results without disclosure."
+        }
+      ]
+    }
+  ]
+}

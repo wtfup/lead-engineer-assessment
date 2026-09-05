@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="referrer" content="no-referrer">
+  <meta name="color-scheme" content="light">
+  <title>Reasoning under constraints — 40-minute assessment</title>
+  <link rel="stylesheet" href="./cognitive.css">
+  <script src="./cognitive.js" defer></script>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to assessment</a>
+  <header class="page-header">
+    <a href="./index.html">Assessment home</a>
+    <p class="eyebrow">Part 1 · Independent reasoning</p>
+    <h1>Reasoning under constraints</h1>
+    <p class="lede">50 questions. 40 minutes. Your reasoning, without AI.</p>
+    <p>No real candidates or results were collected in creating this assessment. This page has no response-submission server.</p>
+  </header>
+  <main id="main">
+    <noscript><p class="notice">JavaScript is needed for the timer and local export. Ask your interviewer for the standalone printable paper; do not improvise an untimed attempt.</p></noscript>
+    <section id="introduction" aria-labelledby="instructions-heading">
+      <h2 id="instructions-heading">Before you start</h2>
+      <p>Work independently. No AI assistants, search, external references, calculators, code, or help from another person. Blank paper and a pen are allowed. Agree accessibility accommodations with your interviewer before starting.</p>
+      <p>The clock starts only when you press <strong>Start 40-minute attempt</strong>. Time continues while the page is closed. Use one tab and do not change your device clock.</p>
+      <ol id="instructions"></ol>
+      <p><strong>Private handover:</strong> download the JSON response file and give it privately to your interviewer through your agreed file-handover method. Nothing is sent automatically. Do not upload answers to GitHub. No score is included in the export.</p>
+      <p>The timer and browser storage are convenience aids, <strong>not tamperproof proctoring</strong>. This is an unnormed reasoning exercise, not an IQ test or a validated psychometric instrument. A score alone is not a hiring verdict.</p>
+      <form id="start-form">
+        <label for="candidate-id">Candidate ID — pseudonym supplied by your interviewer</label>
+        <input id="candidate-id" name="candidate-id" type="text" autocomplete="off" autocapitalize="off" spellcheck="false" minlength="3" maxlength="32" pattern="[A-Za-z0-9][A-Za-z0-9_-]{2,31}" aria-describedby="id-help" required>
+        <p id="id-help" class="muted">3–32 letters, digits, hyphens, or underscores. Do not enter a name, email, telephone number, or resume.</p>
+        <label class="choice acknowledgment" for="conditions"><input id="conditions" type="checkbox" required><span>I understand the no-AI conditions, the continuous 40-minute limit, local storage limits, and private file handover.</span></label>
+        <button id="start" type="submit" disabled>Start 40-minute attempt</button>
+      </form>
+    </section>
+    <p id="load-status" role="status">Loading the assessment…</p>
+    <p id="storage-warning" class="notice" role="status" hidden></p>
+    <section id="recovery" class="notice" aria-labelledby="recovery-title" hidden>
+      <h2 id="recovery-title">Saved attempt needs interviewer recovery</h2>
+      <p>The saved data could not be safely restored. No new timer has started and no saved data has been cleared. Download the raw backup if available, and ask your interviewer how to continue. Do not clear storage or restart without their instructions.</p>
+      <button id="raw-backup" type="button" disabled>Download raw saved backup</button>
+    </section>
+    <section id="attempt" aria-labelledby="attempt-heading" hidden>
+      <div class="attempt-bar">
+        <div><span class="muted">Time remaining</span><br><strong id="timer" role="timer" aria-live="off">40:00</strong></div>
+        <div><p id="attempt-state" role="status"></p><p id="progress">0 of 50 answered</p></div>
+        <div class="actions"><button id="download" type="button">Download response JSON</button><button id="finish" type="button" class="secondary">Finish early…</button></div>
+      </div>
+      <p id="announcement" class="sr-only" aria-live="polite" aria-atomic="true"></p>
+      <h2 id="attempt-heading" tabindex="-1">Your attempt</h2>
+      <p id="attempt-id"></p>
+      <p>MCQ and true/false: choose one. Select-all: choose every supported option and no others. You may leave items blank and revisit them. Downloading a snapshot does not finish the attempt. On expiry or confirmed early finish, responses lock.</p>
+      <nav id="section-nav" aria-label="Jump to section"></nav>
+      <div id="questions"></div>
+      <section class="export-panel" aria-labelledby="export-heading">
+        <h2 id="export-heading">Keep a private copy</h2>
+        <p>After finishing or expiry, download the final snapshot and hand it privately to your interviewer. Browser download acceptance is not file handover. Keep the file even if local storage fails. No results are sent to a server.</p>
+        <button id="show-json" type="button" class="secondary">Show current JSON for manual saving</button>
+        <div id="json-fallback" hidden>
+          <label for="snapshot-text">Response snapshot — copy this text into a private .json file if download is blocked</label>
+          <textarea id="snapshot-text" readonly rows="12" spellcheck="false"></textarea>
+          <button id="select-json" type="button" class="secondary">Select all snapshot text</button>
+          <p class="muted">This text is a snapshot, not a live view. Press “Show current JSON” again after any later changes.</p>
+        </div>
+        <p id="export-status" role="status"></p>
+      </section>
+    </section>
+  </main>
+  <footer>One continuous attempt · Local autosave when available · No automatic score, dishonesty finding, or hiring verdict</footer>
+</body>
+</html>

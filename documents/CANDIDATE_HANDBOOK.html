@@ -1,0 +1,739 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Candidate handbook</title><style>
+:root{--ink:#172b37;--accent:#244e62;--muted:#566875;--line:#cfdae0;--wash:#eef4f6}
+*{box-sizing:border-box}html{background:#e8edef}body{margin:0;color:var(--ink);font:11pt/1.42 Calibri,Arial,sans-serif}
+main{max-width:920px;margin:32px auto;background:white;padding:48px 64px;box-shadow:0 4px 30px #1232}
+.masthead{border-top:7px solid var(--accent);padding-top:18px;margin-bottom:22px}.eyebrow{font-size:9pt;letter-spacing:1.8px;text-transform:uppercase;color:var(--accent);font-weight:700;margin:0 0 12px}
+.title{font-size:30pt;line-height:1.08;letter-spacing:-.6px;margin:0 0 12px}.subtitle{font-size:14pt;color:var(--accent);margin:0 0 14px}
+.boundary{background:var(--wash);border-left:3px solid var(--accent);padding:10px 13px;margin:14px 0;font-size:10pt}
+a{color:#185d78;text-decoration:underline;overflow-wrap:anywhere}.source{font-size:8.5pt;color:var(--muted);margin:3px 0 13px}
+nav{margin:18px 0 28px;padding:15px 18px;border:1px solid var(--line)}nav h2{font-size:14pt;margin:0 0 8px}nav ol{columns:2;column-gap:26px;padding-left:21px;margin:0}nav li{break-inside:avoid;font-size:9.5pt;margin-bottom:6px}
+article{margin-top:26px}article h1{font-size:20pt;line-height:1.18;color:var(--accent);border-bottom:1px solid var(--line);padding-bottom:9px;margin:0 0 13px}
+h2{font-size:14pt;line-height:1.25;color:var(--accent);margin:20px 0 9px}h3{font-size:12pt;line-height:1.3;margin:16px 0 8px;color:var(--accent)}h4{font-size:11pt;margin:14px 0 6px}
+p{margin:0 0 9px;orphans:3;widows:3}ul,ol{padding-left:22px;margin:6px 0 12px}li{margin:0 0 5px}li p{margin:0 0 5px}
+code{font:9pt/1.35 'Courier New',Courier,monospace;background:#f1f4f6;padding:1px 3px;overflow-wrap:anywhere}
+pre{font:9pt/1.35 'Courier New',Courier,monospace;background:#f1f4f6;border:1px solid var(--line);padding:10px 12px;white-space:pre-wrap;overflow-wrap:anywhere;tab-size:2;margin:12px 0;break-inside:avoid}
+pre code{font:inherit;background:none;padding:0;white-space:pre-wrap}blockquote{margin:12px 0;padding:9px 14px;border-left:3px solid var(--accent);background:var(--wash);break-inside:avoid}blockquote p:last-child{margin-bottom:0}
+table{width:100%;border-collapse:collapse;table-layout:fixed;margin:12px 0 16px;font-size:9.5pt;line-height:1.35}th,td{text-align:left;vertical-align:top;border:1px solid var(--line);padding:7px 8px;overflow-wrap:anywhere}th{background:var(--accent);color:white;font-weight:700}th code{background:none;color:inherit}tbody tr:nth-child(even){background:#f5f8f9}thead{display:table-header-group}tr{break-inside:avoid}td p{margin:0}
+.question{break-inside:avoid;margin-bottom:14px}.question h3{margin-top:14px}.question ul{list-style:none;padding-left:12px;margin-bottom:8px}.question li{margin-bottom:4px}.question p:last-child{margin-top:10px;color:#4a5b66}
+.endnote{border-top:1px solid var(--line);font-size:9pt;color:var(--muted);margin-top:22px;padding-top:10px}
+@page{size:A4;margin:19mm 18mm 18mm}
+@media print{html,body{background:white}body{font-size:11pt;line-height:1.36}main{max-width:none;margin:0;padding:0;box-shadow:none}.masthead{break-inside:avoid}article{margin-top:0}article+article{margin-top:26px;break-before:auto}.title{font-size:28pt}nav{break-inside:avoid;margin-bottom:22px}a{text-decoration:none}h1,h2,h3,h4{break-after:avoid}pre{font-size:8.5pt}table{font-size:9pt}.question{margin-bottom:10px}.question h3{font-size:12pt}.source{font-size:8pt}.endnote{break-inside:avoid}}
+@media(max-width:700px){main{padding:26px 22px;margin:0}nav ol{columns:1}.title{font-size:25pt}}
+</style></head><body><main>
+<header class="masthead"><p class="eyebrow">Northstar / Lead engineer assessment</p><h1 class="title">Candidate handbook</h1><p class="subtitle">Setup, practical mission, standards and submission</p><div class="boundary">Read setup and rules before starting. Complete the separate no-AI reasoning stage only when instructed. The practical lab stays local; all records and providers are synthetic. Setup downloads are outside the assessment clock.</div><p><a href="https://wtfup.github.io/lead-engineer-assessment/cognitive.html">Timed reasoning form</a> · <a href="https://raw.githubusercontent.com/wtfup/lead-engineer-assessment/main/documents/REASONING_PAPER.pdf">Separate reasoning paper PDF</a> · <a href="https://wtfup.github.io/lead-engineer-assessment/">Assessment desk</a></p></header>
+<nav aria-label="Contents"><h2>Contents</h2><ol><li><a href="#chapter-0-heading-0">Lead Engineer — Founder’s Technical +1</a></li><li><a href="#chapter-1-heading-0">Candidate handbook — start here</a></li><li><a href="#chapter-2-heading-0">Practical mission — repair the business truth</a></li><li><a href="#chapter-3-heading-0">PostgreSQL challenge — primary gate (30 points)</a></li><li><a href="#chapter-4-heading-0">04 — Learn a small unfamiliar Flutter boundary</a></li><li><a href="#chapter-5-heading-0">05 — Audit an AI-assisted n8n preview</a></li><li><a href="#chapter-6-heading-0">06 — Review, coordinate and hand over</a></li><li><a href="#chapter-7-heading-0">Submission — exact handover steps</a></li><li><a href="#chapter-8-heading-0">Documentation and engineering standards</a></li><li><a href="#chapter-9-heading-0">Setup, Windows, SQL and Docker handover</a></li><li><a href="#chapter-10-heading-0">Synthetic assessment API contract</a></li><li><a href="#chapter-11-heading-0">Synthetic data dictionary and provenance</a></li></ol></nav>
+<article data-source="README.md"><h1 id="chapter-0-heading-0">Lead Engineer — Founder’s Technical +1</h1>
+<p><strong>A four-hour, evidence-first assessment. PostgreSQL, Node/TypeScript and React/Next are the primary gates.</strong></p>
+<p>This is a job simulation, not a trivia contest, a certified IQ test, or free production work. You will reconcile conflicting business evidence, repair a deliberately imperfect local application, review another developer’s work, reason about AI automation, and learn a small unfamiliar module.</p>
+<p><strong>Start here:</strong> <a href="https://github.com/wtfup/lead-engineer-assessment/blob/main/candidate/00_START_HERE.md">Candidate handbook</a> · <a href="https://wtfup.github.io/lead-engineer-assessment/">Hosted assessment desk</a> · <a href="https://github.com/wtfup/lead-engineer-assessment/blob/main/documents/">Downloadable documents</a> · <a href="https://wtfup.github.io/lead-engineer-assessment/cognitive.html">Reasoning test</a></p>
+<blockquote>
+<p>Everything in this repository is synthetic. The fictional company is <strong>Northstar</strong>. No real customer data, company databases, advertising accounts, payment providers, messages, LLM credentials, or production systems are required or permitted. The application deliberately contains assessment defects. <strong>Do not deploy the API or database publicly.</strong> GitHub Pages hosts instructions and the reasoning form, not the backend.</p>
+</blockquote>
+<h2 id="chapter-0-heading-17">What to do, in order</h2>
+<ol>
+<li>Read <a href="https://github.com/wtfup/lead-engineer-assessment/blob/main/candidate/00_START_HERE.md">00 — Start here</a>. Confirm the scope, rules, scoring, prerequisites, and submission route.</li>
+<li>Clone the starter and get the local environment working <strong>before the clock starts</strong>.</li>
+<li>Complete <a href="https://github.com/wtfup/lead-engineer-assessment/blob/main/candidate/01_REASONING.md">01 — Reasoning</a>, 40 minutes, <strong>no AI</strong>. Export your answers privately; do not commit them.</li>
+<li>Start the 200-minute practical with <code>npm run session -- start</code>.</li>
+<li>Read <a href="https://github.com/wtfup/lead-engineer-assessment/blob/main/candidate/02_MISSION.md">02 — Business mission</a> and <a href="https://github.com/wtfup/lead-engineer-assessment/blob/main/candidate/03_DATABASE.md">03 — PostgreSQL/database challenge</a>. Prioritise a narrow, correct end-to-end repair over a broad rewrite.</li>
+<li>Complete the bounded <a href="https://github.com/wtfup/lead-engineer-assessment/blob/main/candidate/05_AUTOMATION.md">AI/workflow</a>, <a href="https://github.com/wtfup/lead-engineer-assessment/blob/main/candidate/04_LEARNING.md">unfamiliar learning</a>, and <a href="https://github.com/wtfup/lead-engineer-assessment/blob/main/candidate/06_TEAMWORK.md">teamwork/code-review</a> tasks. Learning is assessed separately from claimed expertise.</li>
+<li>At practical minute 110 run <code>npm run session -- card</code>. The change card is public; the timing rule is procedural, not a secret-lock claim.</li>
+<li>Finish using <a href="https://github.com/wtfup/lead-engineer-assessment/blob/main/candidate/07_SUBMISSION.md">07 — Submission</a>. Deliver code, evidence, decisions and handover. Report incomplete work honestly.</li>
+</ol>
+<h2 id="chapter-0-heading-62">Starter branches and your own work</h2>
+<ul>
+<li><code>main</code>: published assessment and documentation.</li>
+<li><code>assessment/start</code>: pinned starting branch for the exercise.</li>
+<li><code>candidate/attempt-01</code>: convenience starting branch, <strong>not</strong> a grant of repository write access.</li>
+</ul>
+<pre><code class="language-bash">git clone --branch assessment/start https://github.com/wtfup/lead-engineer-assessment.git
+cd lead-engineer-assessment
+git switch -c submission/attempt-01
+</code></pre>
+<p>Use your own fork/private repository or the ZIP handover described in the submission guide. Do not ask the founder to give you push access to this repository. Do not open a public PR containing reasoning answers, personal details, recordings, or proprietary code. Public code submissions are optional and only with your informed agreement.</p>
+<h2 id="chapter-0-heading-86">Fast setup — Node + local PostgreSQL</h2>
+<p>Prerequisites: Node <strong>22.13+</strong>, npm, Git, Docker Desktop with Docker Compose. The database is real PostgreSQL 16, not an in-memory imitation. A Flutter SDK is needed only for the small learning exercise; a documented fallback exists.</p>
+<pre><code class="language-bash">npm ci
+docker compose up -d db
+npm run doctor
+npm run db:reset
+npm test
+npm run build
+npm run typecheck
+npm run dev
+</code></pre>
+<p>Open <strong>http://127.0.0.1:4317</strong>. API health is <strong>http://127.0.0.1:4318/health</strong>. All ports bind to loopback; do not enable public port forwarding. In a second terminal:</p>
+<pre><code class="language-bash">npm run test:challenge
+</code></pre>
+<p><strong>Expected starter state:</strong> <code>npm test</code>, type-check and build pass. <code>test:challenge</code> has deliberately failing business acceptance tests. Those failures are the work—not broken installation. Read each failure and create your own regressions. Passing only the smoke suite does not pass the assessment.</p>
+<p>For browser checks:</p>
+<pre><code class="language-bash">npx playwright install chromium
+npm run test:e2e
+</code></pre>
+<h2 id="chapter-0-heading-104">Docker-only application route</h2>
+<p>If you do not have Node installed, Docker can run the web application and database. The build downloads pinned npm dependencies.</p>
+<pre><code class="language-bash">docker compose up -d db
+docker compose build app
+docker compose run --rm app npm run db:reset
+docker compose up -d app
+</code></pre>
+<p>Open http://127.0.0.1:4317. Commands can run inside the app container:</p>
+<pre><code class="language-bash">docker compose exec app npm test
+docker compose exec app npm run test:challenge
+docker compose exec app npm run typecheck
+</code></pre>
+<p>After editing source, rebuild and recreate only the app: <code>docker compose up -d --build app</code>. <strong>App restart does not reset the database.</strong> <code>db:reset</code> is explicitly destructive to this lab’s synthetic data; save evidence before using it. Stop the lab with <code>docker compose down</code>. Add <code>-v</code> only if you intentionally want to delete the lab volume. This project’s Compose name is <code>lead-engineer-assessment</code>.</p>
+<p>Only <code>./submission</code> is bind-mounted into <code>/app/submission</code>, so your timing record and written evidence survive app recreation and remain on your laptop for Git/ZIP handover. No home-directory mount is used. Follow <a href="https://github.com/wtfup/lead-engineer-assessment/blob/main/candidate/10_SETUP_TROUBLESHOOTING.md">complete Docker, Windows and SQL steps</a>.</p>
+<p>The Docker app has a production build, not hot reload. Native Node is the faster editing route. Do not run both routes on port 4317 simultaneously.</p>
+<h2 id="chapter-0-heading-124">Assessment structure and weights</h2>
+<table>
+<thead>
+<tr>
+<th>Area</th>
+<th style="text-align:right">Points</th>
+<th>Evidence, not vocabulary</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Independent reasoning</td>
+<td style="text-align:right">15</td>
+<td>Correct inference, quantitative reasoning, recognition of insufficient evidence</td>
+</tr>
+<tr>
+<td>PostgreSQL / database engineering</td>
+<td style="text-align:right">30</td>
+<td>Ledger reconciliation, transactions, concurrency, isolation, schema constraints, query plan</td>
+</tr>
+<tr>
+<td>Node/API reliability</td>
+<td style="text-align:right">15</td>
+<td>Correct state transitions, validation, retries, safe recovery, reproducible tests</td>
+</tr>
+<tr>
+<td>React/Next</td>
+<td style="text-align:right">15</td>
+<td>State isolation, asynchronous correctness, usable loading/error/empty states, browser proof</td>
+</tr>
+<tr>
+<td>AI/workflow engineering</td>
+<td style="text-align:right">10</td>
+<td>Deterministic guards, untrusted-output handling, costs/retries, no unsafe side effects</td>
+</tr>
+<tr>
+<td>Learning an unfamiliar module</td>
+<td style="text-align:right">5</td>
+<td>Documentation → small change → evidence; prior Flutter expertise not required</td>
+</tr>
+<tr>
+<td>Teamwork, standards and handover</td>
+<td style="text-align:right">10</td>
+<td>Prioritised respectful review, clear contracts, risk escalation, teammate-ready instructions</td>
+</tr>
+<tr>
+<td><strong>Total</strong></td>
+<td style="text-align:right"><strong>100</strong></td>
+<td>Independent reviewer verifies evidence before recommending a meeting</td>
+</tr>
+</tbody>
+</table>
+<p>Suggested practical budget: business diagnosis 20 min; database/backend 85; frontend 30; AI/workflow 15; unfamiliar module 20; teamwork/handover 30. Total practical 200 minutes. Setup and downloads are outside the clock.</p>
+<p>This is a deliberately demanding timebox. Scope judgment matters. There is no expectation of a production-complete system or mastery of every framework. The core contract is explicit; optional stretches are not hidden requirements. A good candidate may decline unnecessary complexity and explain why.</p>
+<h2 id="chapter-0-heading-238">Source map</h2>
+<pre><code class="language-text">candidate/      Detailed tasks, standards, timing, change card, submission rules
+fixtures/       Synthetic ledger, campaign, lead and order evidence + data dictionary
+database/       PostgreSQL schema + query-plan performance lab
+server/         Local Node API, deliberately incomplete service, worker simulator
+app/            React/Next recovery desk
+mobile/         Small Flutter learning exercise
+exercises/      Offline automation/workflow and simulated teammate review material
+tests/          Platform smoke, business acceptance and browser tests
+scripts/        Startup, lab-only reset helpers, timing and submission checks
+docs/           Static public assessment portal and answer-free reasoning form
+documents/      Printable candidate handbook
+submission/     Your work products; templates are in candidate/templates/
+</code></pre>
+<p>The evaluator’s answer key, golden implementation and scoring notes are <strong>not</strong> in this public repository, its branches, release assets or history. Public tests cover known requirements, not every held-out input. Held-out checks must respect the same published contract.</p>
+<h2 id="chapter-0-heading-245">Assessment integrity and privacy</h2>
+<p>The browser timer and local Git history are not tamperproof. No hidden tracking or surveillance is included. The reasoning section uses an honour/proctor rule; disclose any interruption or accommodation. Practical work may use AI with disclosure in <code>submission/AI_USAGE.md</code>. You must understand and defend submitted work. Personal project code, employer IP, live credentials and real customer data are prohibited.</p>
+<p>The evaluator distinguishes technical incompleteness from misrepresentation. A missing feature loses its relevant points; it is not automatically dishonesty. Deliberately fabricated results, concealed assistance against stated rules, or real-system actions against the safety rules require human review and may end the assessment.</p>
+<p><strong>Setup help:</strong> <a href="https://github.com/wtfup/lead-engineer-assessment/blob/main/candidate/10_SETUP_TROUBLESHOOTING.md">Windows, SQL access, Docker persistence and clean verification</a>.</p>
+<p><strong>Questions?</strong> Read <a href="https://github.com/wtfup/lead-engineer-assessment/blob/main/candidate/00_START_HERE.md#faq">the handbook FAQ</a>. Ask the coordinator for environment/access issues. Document business assumptions and meaningful questions; do not invent requirements to make your solution easier.</p>
+</article><article data-source="candidate/00_START_HERE.md"><h1 id="chapter-1-heading-0">Candidate handbook — start here</h1>
+<h2 id="chapter-1-heading-3">Your role in this exercise</h2>
+<p>You are acting as the hands-on engineering lead of <strong>Northstar</strong>, a fictional subscription-commerce business. The founder is unavailable during the exercise. Marketing wants to increase spend. Operations distrusts the numbers. A developer has suggested a quick patch. Your job is to establish what is true, choose a safe intervention, deliver working code and leave another engineer able to continue.</p>
+<p>The assessment is designed for a senior full-stack engineer with Node/TypeScript, React/Next, PostgreSQL, technical leadership and AI/workflow experience. It tests primary skills deeply and secondary skills proportionately. You do not need to know Flutter already. You are not expected to build an entire business platform in four hours.</p>
+<h2 id="chapter-1-heading-12">Before starting the clock</h2>
+<p>Ask the coordinator to confirm the paid-trial terms and time allowance before work starts; no amount or employment offer is implied by this repository. Agree any reasonable accessibility or scheduling accommodation up front. The assessment uses only fictional material and is not assigned production work.</p>
+<ol>
+<li>Clone <code>assessment/start</code>, create <code>submission/attempt-01</code>, record the starting commit.</li>
+<li>Install dependencies and start only the supplied local lab. Get the recovery desk and database working.</li>
+<li>With no dev server running, run <code>npm test</code>, <code>npm run build</code>, then <code>npm run typecheck</code>. Start <code>npm run dev</code> afterwards; do not build and run dev against the same generated directory concurrently. Record the output. If baseline setup fails, ask for environment help before starting. Do not spend your timed assessment fixing an organiser’s installation problem.</li>
+<li>Confirm the intended failing business tests with <code>npm run test:challenge</code>. Their failure is not an installation blocker.</li>
+<li>Read the table of contents, scope, standards and rules. Do not inspect timed reasoning questions or the timed change card early.</li>
+<li>Confirm a private return route for exported reasoning answers and any recording with the coordinator. No external email address or recipient is assumed by this pack.</li>
+</ol>
+<p>Record Node, npm, OS, PostgreSQL and Flutter versions in your handover. Docker installation, package downloads and browser SDK setup are outside the timed work. If a machine/network fault occurs, notify the coordinator and log the interruption; an extension is a coordinator decision, not something to conceal.</p>
+<h2 id="chapter-1-heading-53">Stage A — 40-minute independent reasoning</h2>
+<p>Open the hosted reasoning form, or use the printable paper if necessary. Use an attempt ID, not your email/phone. No AI, search, code execution, calculator or hidden assistance in this stage; rough paper is allowed. Questions are self-contained. For select-all, choose every supported answer and no unsupported answer. Unanswered questions are allowed. There is no negative marking for unanswered items.</p>
+<p>The form autosaves locally when browser storage is available; download a copy before leaving. At timeout it locks input but still permits export. It does not send answers to a server. The timer is not tamperproof; this is an honour/proctor boundary. If storage fails, the form must still allow you to export. Hand the result to the coordinator privately. <strong>Do not commit or publish reasoning answers.</strong></p>
+<p>This is a reasoning work sample, not a clinically validated intelligence test. Objective responses may be scored against a private answer key. Any integrity-related response is a human-review signal, not proof of your character.</p>
+<h2 id="chapter-1-heading-65">Stage B — 200-minute practical</h2>
+<p>Run <code>npm run session -- start</code> after completing Stage A. Keep the original start record. Suggested working order:</p>
+<table>
+<thead>
+<tr>
+<th>Practical time</th>
+<th>Focus</th>
+<th>Minimum useful output</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0–20 min</td>
+<td>Read the business evidence and plan</td>
+<td>Source-backed findings, unknowns, chosen scope</td>
+</tr>
+<tr>
+<td>20–105 min</td>
+<td>PostgreSQL and API</td>
+<td>Reconciliation query, bounded transactional repair, concurrency tests</td>
+</tr>
+<tr>
+<td>105–135 min</td>
+<td>React/Next</td>
+<td>Correct account state and useful failure behaviour, browser proof</td>
+</tr>
+<tr>
+<td>135–150 min</td>
+<td>AI/workflow review</td>
+<td>Unsafe-path analysis and deterministic guard recommendations</td>
+</tr>
+<tr>
+<td>150–170 min</td>
+<td>Unfamiliar module</td>
+<td>Small documented Flutter/Dart change and honest proof</td>
+</tr>
+<tr>
+<td>170–200 min</td>
+<td>Team review and handover</td>
+<td>Review, delegation plan, evidence index, final status</td>
+</tr>
+</tbody>
+</table>
+<p>At minute 110, run <code>npm run session -- card</code>. It may require reprioritisation. The schedule is guidance; you own trade-offs and may reallocate time. The deadline stays fixed unless the coordinator explicitly pauses or extends it.</p>
+<h2 id="chapter-1-heading-157">Core acceptance expectations</h2>
+<ul>
+<li>Financial metrics are derived from documented business truth, not ad-platform attribution or the count of webhook rows.</li>
+<li>Repeated/concurrent events do not duplicate a business effect. Use PostgreSQL for durable invariants; process-local memory alone is insufficient.</li>
+<li>A failed, invalid or mismatched event cannot create a successful business outcome. Distinguish received, validated, recorded, completed and reconciled states.</li>
+<li>Account identity applies at backend data access, not merely a frontend dropdown. Lab headers simulate authenticated context; they are not real authentication.</li>
+<li>You can explain transaction boundaries, rollback behaviour and what happens after a worker restart.</li>
+<li>The web UI has trustworthy account state, clear loading/error/empty states, and does not silently show stale values as current.</li>
+<li>Your SQL/performance reasoning is backed by actual PostgreSQL output rather than a memorised “add an index” answer.</li>
+<li>Your work is runnable by a teammate without personal IDE state, credentials or undocumented manual changes.</li>
+</ul>
+<p>See the mission and database documents for exact contracts. The backend API contract and data dictionary define data semantics. Where a proposed change would break that contract, document the conflict and do not silently redefine truth.</p>
+<h2 id="chapter-1-heading-205">Allowed and prohibited</h2>
+<p><strong>Allowed during practical:</strong> official documentation, ordinary search, package documentation, AI coding assistants with disclosure, small open-source examples with attribution, your normal editor and terminal. Explain what the tools generated and how you checked it. Reusing provided infrastructure is preferred to needless rewrites.</p>
+<p><strong>Not allowed:</strong> assistance from another human doing the work, undisclosed help in the no-AI stage, employer code or confidential data, real platform credentials, live campaigns/messages/payments, pretending mocks are live proof, modifying test reports instead of behaviour, deleting tests to claim success, uploading personal information or reasoning answers publicly.</p>
+<p>If you change a supplied test because you believe it contradicts the published contract, keep the original, add a new test and explain the discrepancy. Held-out evaluation will not trust your test changes automatically. A justified contract objection is welcome; silent weakening is not.</p>
+<h2 id="chapter-1-heading-217">Published scoring and gates</h2>
+<p>Reasoning 15; PostgreSQL 30; Node/API 15; React/Next 15; AI/workflows 10; unfamiliar learning 5; teamwork/standards/handover 10. Total 100.</p>
+<p>A suggested meeting-shortlist threshold is 75/100, <strong>with</strong> at least 18/30 PostgreSQL, 9/15 Node and 9/15 React, and independently verified core safety/correctness. These are assessment rules, not a job offer or an automatic employment decision. Strong overall points cannot erase an unresolved core cross-account leak or duplicate business effect. Work acknowledged as incomplete receives partial credit where independently supported. Do not hide a gap to chase a green score.</p>
+<p>Qualitative work is reviewed by a human/technical evaluator using anchored rubrics, not auto-marked by matching prose to a string. The teamwork section tests a simulated interaction and handover; it cannot prove how you behave in a real team over time.</p>
+<h2 id="chapter-1-heading-229">Evidence standard</h2>
+<p>Every important claim should point to a command, query, test, file/line, captured response or documented source. Keep code and explanation aligned. Save stdout/stderr and exit codes where useful. A screenshot of a green terminal is weaker than a reproducible command with the exact source revision. “It works locally” needs reproduction instructions. “Production-ready” requires more than this exercise can demonstrate.</p>
+<p>Examples of useful statements:</p>
+<ul>
+<li>“The replay test now passes against PostgreSQL; I have not load-tested across multiple API processes.”</li>
+<li>“The query plan uses the proposed index on the supplied distribution; production selectivity is unknown.”</li>
+<li>“I reviewed the Flutter change but could not execute it because the SDK was unavailable; here is the exact unverified boundary.”</li>
+</ul>
+<h2 id="chapter-1-heading-255">FAQ</h2>
+<p><strong>Do I need to meet the founder first?</strong> No. This pack is designed to be self-guided. The coordinator handles start/end and environment issues. Meaningful business questions should be written in your decisions document; make explicit, reversible assumptions where appropriate.</p>
+<p><strong>Do I have to finish everything?</strong> Core correctness and judgment matter most. The timebox is intentionally demanding. Prioritise, show real depth, and label unfinished work. Optional stretches are not hidden mandatory work.</p>
+<p><strong>Should I rewrite the app or switch databases?</strong> Usually no. Explain an exceptional reason before doing so. A rewrite that avoids demonstrating PostgreSQL, Node and React does not meet the primary-skill assessment.</p>
+<p><strong>Can I use AI?</strong> Not in reasoning. Yes in practical with disclosure, understanding and verification. No account/key is provided or required for a real LLM; the AI exercise is offline.</p>
+<p><strong>Can I ask questions?</strong> Yes. High-value clarification is good. Requiring the founder to make every technical choice is not. Do not let an unanswered noncritical preference block a safe, bounded decision.</p>
+<p><strong>Do the visible tests contain the whole answer?</strong> No. They are examples of the published contract. Independently generated cases may vary IDs, values, timing, accounts, retries and concurrency without changing the requirements.</p>
+<p><strong>Can I submit a ZIP instead of a public PR?</strong> Yes. Use the private handover route in the submission guide. Do not publish personal or cognitive-response data.</p>
+<p><strong>Can I change time settings or inspect future files?</strong> Technically public files and local clocks are inspectable. Do not misrepresent what you did. This pack does not claim secure exam lockdown.</p>
+<p><strong>What should I not build?</strong> No real advertising integrations, authentication platform, billing product, multi-agent system, Kubernetes cluster, fancy animations or full mobile app. Explain the necessary production changes as a short roadmap instead.</p>
+</article><article data-source="candidate/02_MISSION.md"><h1 id="chapter-2-heading-0">Practical mission — repair the business truth</h1>
+<h2 id="chapter-2-heading-3">Scenario</h2>
+<p>Northstar has two isolated business accounts, North and South. Each buys advertising, captures leads and sells orders. The business has separate campaign reports, order records and asynchronous payment event history. Some events repeat. Some are delivered late. Some records do not justify a financial conclusion.</p>
+<p>The recovery desk currently runs, but its numbers and processing behaviour have not earned trust. Treat every stakeholder statement below as a claim to investigate, not authoritative truth.</p>
+<h3 id="chapter-2-heading-12">Stakeholder notes — fictional</h3>
+<p><strong>Marketing:</strong> “The attributed conversion number is rising. We should increase spend today. Our dashboard proves the campaigns are profitable.”</p>
+<p><strong>Operations:</strong> “Some people appear paid in one place and pending in another. We need a safe way to see the actual state and recover work. Please do not create duplicate orders or notifications.”</p>
+<p><strong>Backend developer:</strong> “We can check whether an event exists before inserting it, and mark the order complete immediately. The provider retries anyway.”</p>
+<p><strong>Frontend developer:</strong> “I can show whatever the summary endpoint returns. If requests fail, the previous numbers are probably better than an empty screen.”</p>
+<p><strong>Founder:</strong> “Give me the truth, the highest-value safe fix, and the decision you need from me. Do not bring me ten disconnected dashboards.”</p>
+<h2 id="chapter-2-heading-30">Inputs and authority</h2>
+<p>Read <code>fixtures/DATA_DICTIONARY.md</code>, <code>fixtures/seed.json</code>, the synthetic CSVs, <code>database/schema.sql</code>, and <code>server/API_CONTRACT.md</code>. The API contract and data dictionary define the exact semantics. The marketing report is an attribution report, not a bank settlement statement. Payment event rows are observations, not automatically unique paid orders.</p>
+<p>All financial values use integer paise and currency is explicit. Compare timestamps with timezone awareness. Keep account identity in every relevant join. State any rows you exclude and why. Do not guess profitability from revenue/ad spend alone: other costs and attribution certainty matter.</p>
+<h2 id="chapter-2-heading-39">Part 1 — establish the truth</h2>
+<p>Write <code>submission/DECISIONS.md</code>, no more than two pages excluding evidence:</p>
+<ol>
+<li>What do the records actually establish? Give paid-order count, gross/net revenue as defined in the data dictionary, spend and revenue/spend ratio by account/campaign where justified.</li>
+<li>Which claims are unsupported? Distinguish bad measurement, broken processing, missing data and genuine business performance.</li>
+<li>What is the highest-risk/highest-value technical fix? What is second? What should not be built today?</li>
+<li>What decision, if any, genuinely needs a business owner? Give a recommendation and alternatives, not an unbounded list of questions.</li>
+<li>Name the source and query for each number. Do not hand-type unexplained totals into the UI.</li>
+</ol>
+<p>Keep your query in <code>submission/reconciliation.sql</code>. Run it against the real lab database and preserve output.</p>
+<h2 id="chapter-2-heading-75">Part 2 — PostgreSQL + Node core repair</h2>
+<p>The supplied service is intentionally incomplete. Repair the published business behaviour without weakening the contract. Preserve the API shape unless you document and implement a compatible migration.</p>
+<h3 id="chapter-2-heading-81">Mandatory behaviour</h3>
+<ul>
+<li>Valid successful payments create the intended business effect once, including concurrent repeats and different transport event IDs referring to the same payment.</li>
+<li>Invalid amounts, unsupported currencies, unknown orders and account mismatches do not create successful fulfilment/outbox effects.</li>
+<li>Financial state changes, their durable event record and queued work have a defensible transaction boundary. A failure must not leave a partially completed business operation masquerading as success.</li>
+<li>Account-scoped APIs cannot return or mutate another account’s order. Testing only the list endpoint is insufficient.</li>
+<li>A late failure must not silently erase an authoritative success. Use the explicitly published provider/state rules; do not invent a reversal/refund from a failed event.</li>
+<li>Worker retries/restarts must not duplicate a confirmed simulator side effect. Explain received/accepted/completed/unknown states and what you can actually prove.</li>
+<li>Money is handled as integer paise, not floating-point currency arithmetic. SQL is parameterised; untrusted text never becomes SQL structure.</li>
+</ul>
+<p>Write tests before or alongside each repair and show at least one meaningful failing-to-passing regression. The visible acceptance suite is not the entire grading universe. Do not hardcode seed-specific IDs or amounts. In-memory deduplication alone is not durable and is not enough.</p>
+<p>The supplied simulator makes no real network calls. Do not replace it with a live provider. Extend it only inside the isolated lab to make a failure reproducible.</p>
+<h2 id="chapter-2-heading-127">Part 3 — React/Next primary-skill task</h2>
+<p>Make the existing recovery desk a trustworthy view of the selected account.</p>
+<ol>
+<li>Rapid account switching must not let an old asynchronous response overwrite the new account’s data.</li>
+<li>Loading, errors, empty results and stale data must be visually distinguishable. A previous account’s values must not be represented as current.</li>
+<li>Recovery actions should show pending/result states and avoid accidental double-submission. Server-side invariants remain mandatory; button disabling alone is not idempotency.</li>
+<li>The display must use the API’s integer-paise contract consistently and avoid invalid/misleading ratios.</li>
+<li>Preserve accessible labels, keyboard operation, usable mobile width and a clear recovery flow.</li>
+<li>Add at least one browser or component-level regression that would fail on the original behaviour. Explain client/server responsibilities and any relevant caching choice.</li>
+</ol>
+<p>You are not being graded on a visual redesign. Do not spend the timebox rebranding the application. The existing UI is deliberately small so you can focus on async correctness and operational clarity.</p>
+<h2 id="chapter-2-heading-168">Part 4 — architecture and standards</h2>
+<p>Add a compact diagram to the handover showing the actual event/data flow and trust boundaries. Text or Mermaid is acceptable. Mark durable state, transaction scope, simulated provider boundary, retry ownership and account identity.</p>
+<p>Answer concisely:</p>
+<ul>
+<li>What is enforced by PostgreSQL, by application code, by the frontend, and by the provider simulator?</li>
+<li>What changes when two API processes and two workers run concurrently?</li>
+<li>Which failure requires reconciliation rather than a blind retry?</li>
+<li>How would you deploy a schema change without hiding corruption, losing data or breaking an older application instance? Include rollback limitations.</li>
+<li>What would you monitor first, and what should never appear in logs?</li>
+</ul>
+<p>Do not submit a catalogue of technologies. Explain why each component exists. A simple monolith with sound invariants is preferable to unjustified microservices.</p>
+<h2 id="chapter-2-heading-207">Part 5 — business and marketing judgment</h2>
+<p>This is an analytical task, not permission to operate Meta. In the decisions document, explain whether you would change budget now, what measurement uncertainty remains, and the smallest experiment or reconciliation you would run next. Separate attribution metrics, actual receipts, unit economics and causal lift.</p>
+<p>Use official Meta documentation if helpful, but do not create an ad account, import audience data, send conversion events or use a real token. A conceptual browser/server event deduplication plan should specify stable identity and consent boundaries without claiming that our synthetic API is the real Meta API.</p>
+<h2 id="chapter-2-heading-216">Scope discipline</h2>
+<p>Mandatory code: one narrow, reliable PostgreSQL/Node flow plus the bounded React async/error-state repair. Mandatory evidence: SQL reconciliation, database plan reasoning, regression tests, secondary exercise responses, learning attempt and teammate-ready handover. Optional stretches: load testing beyond supplied cases, complete observability implementation, production-grade authentication design implementation, or a larger mobile feature. Optional work cannot compensate for a broken core invariant.</p>
+<p>If time runs out, stop, preserve the exact state, and identify the remaining risk. Do not fabricate a clean run or quietly delete failures. Your ability to make a safe, honest delivery decision is part of the assessment.</p>
+</article><article data-source="candidate/03_DATABASE.md"><h1 id="chapter-3-heading-0">PostgreSQL challenge — primary gate (30 points)</h1>
+<p>This section is intentionally deep. Use <strong>actual PostgreSQL</strong> and show results. An ORM model diagram or an in-memory test is not sufficient database proof. Work only against the isolated <code>assessment</code> database provided by Compose.</p>
+<h2 id="chapter-3-heading-6">A. Reconcile before you mutate</h2>
+<p>Using the data dictionary and schema, derive account/campaign financial truth with SQL. Show why a naive join from orders to payment events can multiply money. Distinguish event identity from business payment identity. Handle repeated observations, status precedence, refunds, currency, time boundaries and account identity exactly as the published fixture contract defines them.</p>
+<p>Deliver <code>submission/reconciliation.sql</code> and output. Include conservation checks: raw rows, unique business entities, valid/invalid or excluded records, and totals. Where a value cannot be inferred, report unknown rather than silently substituting zero. You may add CTEs, window functions or views, but justify the method and keep the original source rows auditable. The raw repeated-delivery feed is in the fixture JSON/CSV; the reset database contains canonical event identities, not every raw delivery. For raw-feed conservation, combine explicit file-source counts with SQL, or stage a source-preserving raw copy in your isolated schema. Do not expect canonical payment_events to contain repeated transport rows.</p>
+<h2 id="chapter-3-heading-15">B. Durable invariants and concurrent requests</h2>
+<p>Repair the core flow so the database protects the business effect under concurrent event delivery. The existing app may have superficially plausible application checks; demonstrate why your design survives races.</p>
+<p>Required evidence:</p>
+<ul>
+<li>Replay the same event sequentially and concurrently.</li>
+<li>Send distinct event IDs referring to the same business payment.</li>
+<li>Verify the resulting order/event/fulfilment/outbox state directly, not only the HTTP status.</li>
+<li>Exercise a failed transaction and show what did <strong>not</strong> get committed.</li>
+<li>Exercise the same order ID through the wrong account context.</li>
+<li>Explain duplicate-safe constraints, foreign-key relationships and any state transition assumptions.</li>
+</ul>
+<p>A correct answer explains where uniqueness belongs and why, not merely “use a transaction.” If you add a unique constraint, address existing duplicates before deployment. If you acquire a lock, explain what row/key it protects, ordering, timeout/deadlock considerations and the effect of multiple Node processes. Do not catch all integrity errors and call them success; distinguish a genuine replay from an invalid request.</p>
+<h2 id="chapter-3-heading-59">C. Query-plan lab</h2>
+<p>The supplied <code>database/performance.sql</code> creates a separate deterministic performance fixture; it does not need real company data. Run:</p>
+<pre><code class="language-bash">npm run db:performance
+</code></pre>
+<p>Inspect the script and schema first. Use <code>EXPLAIN (ANALYZE, BUFFERS)</code> on the target query before and after a narrowly justified index/query change. Put your experiment in <code>submission/performance.sql</code> and the plans in <code>submission/DATABASE.md</code> or a linked evidence file.</p>
+<p>Explain:</p>
+<ol>
+<li>Estimated versus actual rows, filter selectivity, scans, sorting and buffer work.</li>
+<li>Why the chosen column order suits this predicate/order/limit pattern.</li>
+<li>Which other workloads would pay for the index through writes/storage.</li>
+<li>Whether a sequential scan can be the correct choice on a small/low-selectivity table.</li>
+<li>How your conclusion depends on the supplied data distribution and cache state.</li>
+</ol>
+<p>Do not claim a universal speedup from one wall-clock reading. There is no arbitrary millisecond pass threshold; plan reasoning and reproducible evidence matter. A proposal without a measured plan gets only partial credit.</p>
+<h2 id="chapter-3-heading-102">D. Migration and recovery note</h2>
+<p>Write a short deploy plan, not a production deployment:</p>
+<ul>
+<li>Preflight queries for duplicates/orphans/invalid values.</li>
+<li>How to add/backfill/validate the chosen constraint or index.</li>
+<li>Locking and availability risks, compatibility with old/new app versions.</li>
+<li>What rollback can and cannot reverse after new valid data has been written.</li>
+<li>How you would detect partial progress and resume safely.</li>
+</ul>
+<p>No schema reset should be described as a production migration. <code>npm run db:reset</code> is a destructive <strong>lab-only</strong> convenience. Save your work/evidence before resetting. Never point it at another database.</p>
+<h2 id="chapter-3-heading-138">Scoring anchors (published)</h2>
+<table>
+<thead>
+<tr>
+<th>Database evidence</th>
+<th style="text-align:right">Maximum</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Source-backed reconciliation and conservation</td>
+<td style="text-align:right">8</td>
+</tr>
+<tr>
+<td>Transactions, uniqueness, concurrency and rollback</td>
+<td style="text-align:right">12</td>
+</tr>
+<tr>
+<td>Account/data integrity and schema reasoning</td>
+<td style="text-align:right">5</td>
+</tr>
+<tr>
+<td>Actual query plans, index trade-offs and safe migration note</td>
+<td style="text-align:right">5</td>
+</tr>
+<tr>
+<td><strong>Total</strong></td>
+<td style="text-align:right"><strong>30</strong></td>
+</tr>
+</tbody>
+</table>
+<p>A suggested lead-readiness floor is 18/30 plus no unresolved mandatory duplicate-effect or cross-account invariant. Passing this section alone does not establish overall role fit. Do not trade correctness for a polished explanation.</p>
+<h2 id="chapter-3-heading-198">Scaffold operating boundary</h2>
+<p>The supplied worker is calibrated for up to four concurrent invocations. Pool-saturating worker load can cause bounded connection-acquisition timeouts; retry with available capacity recovers. High-load worker admission/pool redesign is optional, not a hidden core requirement. Preserve the provider's separate commit boundary when reasoning about recovery.</p>
+<h2 id="chapter-3-heading-204">Standards you should demonstrate naturally</h2>
+<p>Parameterised SQL; integer money; explicit timezones; source-preserving reconciliation; appropriate constraints; connection cleanup; transaction ownership on one connection; bounded queries; deterministic tests with independent variants; honest benchmark interpretation; least-privilege production design. Explain what remains only a simplified lab convention, especially fake account headers and lab-only credentials.</p>
+</article><article data-source="candidate/04_LEARNING.md"><h1 id="chapter-4-heading-0">04 — Learn a small unfamiliar Flutter boundary</h1>
+<p><strong>20 minutes · 5 points · practical section · setup outside the timer.</strong> Flutter expertise is not assumed and this is not a mobile-platform build. We assess how you learn, reason and verify a bounded change—not prior Flutter vocabulary. Prioritize the core SQL/API/React work first. AI/docs are allowed with disclosure.</p>
+<h2 id="chapter-4-heading-6">Goal</h2>
+<p>In <code>mobile/</code>, fix the invoice screen so <strong>only the latest requested load may change visible data, loading state or error state</strong>. A slow old request must not replace a newer result. Keep the API client injectable and existing user actions usable.</p>
+<p>The tiny web-target Flutter app has two synthetic tenants, an asset-only fake API, integer-paise money, loading/empty/error/retry UI and smoke tests. There is no login, server, network API, mobile signing, store publishing or real tenant data. Fixing the UI race is not a substitute for server-side tenant authorization in a real product.</p>
+<h2 id="chapter-4-heading-15">Setup (do this before timing)</h2>
+<p>Validated toolchain: <strong>Flutter 3.38.5 / Dart 3.10.4</strong>. The pubspec permits Dart 3.10–3.x; a different SDK is not promised identical dependency resolution. Use a prepared SDK or <a href="https://docs.flutter.dev/install">official Flutter installation</a>. Do not burn the learning slot installing Android Studio, Xcode or emulators.</p>
+<p>From the repository root:</p>
+<pre><code class="language-sh">cd mobile
+# Optional: keep downloaded packages inside this ignored directory.
+export PUB_CACHE=&quot;$PWD/.pub-cache&quot;
+flutter --suppress-analytics --no-version-check pub get
+flutter --suppress-analytics --no-version-check analyze
+flutter --suppress-analytics --no-version-check test
+flutter --suppress-analytics --no-version-check run -d web-server --no-web-resources-cdn --web-hostname 127.0.0.1 --web-port 4329
+</code></pre>
+<p>Open the loopback URL printed by Flutter. <code>--suppress-analytics</code> affects the command, not global Flutter settings. Do not run <code>flutter config</code> or upgrade the shared SDK for this lab. Dependency/SDK setup may need Internet; <strong>application data and model exercises are offline</strong>.</p>
+<p>For a compiled web run instead:</p>
+<pre><code class="language-sh">flutter --suppress-analytics --no-version-check build web --no-web-resources-cdn
+python3 -m http.server 4329 --bind 127.0.0.1 --directory build/web
+</code></pre>
+<p>The no-CDN build bundles renderer resources; Python serves the compiled app. Stop either server with Ctrl-C. If port 4329 is occupied, use a free loopback port. Do not expose it publicly.</p>
+<h2 id="chapter-4-heading-35">Read only what you need (~4 minutes)</h2>
+<ul>
+<li><a href="https://api.flutter.dev/flutter/widgets/State/setState.html"><code>State.setState</code></a>: synchronous state mutation, then rebuild; do not make its callback async.</li>
+<li><a href="https://api.flutter.dev/flutter/widgets/State/mounted.html"><code>State.mounted</code></a>: lifecycle validity after an await.</li>
+<li><a href="https://dart.dev/libraries/async/async-await">Dart async/await</a>: a Future completes later; completion order can differ from call order.</li>
+<li><a href="https://docs.flutter.dev/cookbook/testing/widget/introduction">Widget testing</a>: <code>pump</code> advances a widget test; the supplied controlled client completes exact requests without sleeps.</li>
+</ul>
+<p>Map these ideas to something you already know in React/TypeScript. Then read <code>lib/main.dart</code>, <code>lib/api_client.dart</code>, and <code>challenges/latest_request_test.dart</code>.</p>
+<h2 id="chapter-4-heading-63">Work (~12 minutes)</h2>
+<ol>
+<li>Run the explicit acceptance command below before changing code; it is <strong>intentionally RED on the starter</strong>. <code>flutter test</code> alone is only setup/smoke proof.</li>
+<li>Patch the smallest reasonable part of <code>lib/main.dart</code>. Do not remove tests, hardcode invoice IDs, delay all clicks, or disable tenant switching/reload to avoid overlapping requests.</li>
+<li>Prove the latest-request rule for old success, old error, repeated loads of the same tenant and alpha→beta→alpha. Preserve visible active-request errors, retry and disposal safety.</li>
+</ol>
+<pre><code class="language-sh">flutter --suppress-analytics --no-version-check test challenges/latest_request_test.dart
+flutter --suppress-analytics --no-version-check test
+flutter --suppress-analytics --no-version-check analyze
+</code></pre>
+<p>The fixture contract is the JSON array in <code>mobile/assets/invoices.json</code>: camelCase <code>id</code>, <code>tenant</code>, <code>amountPaise</code> (integer), <code>status</code> (<code>pending</code>/<code>paid</code>). <code>ApiClient.loadInvoices(tenant)</code> returns a Future of filtered invoice rows. The fake normally delays alpha longer than beta. Tests inject <code>ControlledApi</code> to force precise ordering; no wall-clock guessing is required.</p>
+<h2 id="chapter-4-heading-87">Handover (~4 minutes)</h2>
+<p>Add <code>submission/LEARNING.md</code>: what was unfamiliar; the docs/concept you used; the smallest patch and why it works; actual commands and outcomes; one remaining risk. Include RED and GREEN evidence if executed. Do not call a passing build proof that the race is fixed.</p>
+<h2 id="chapter-4-heading-93">No SDK available? Equivalent reasoning route</h2>
+<p>State <strong><code>EXECUTION_UNVERIFIED — no Flutter SDK</code></strong>, read the supplied Dart and tests, and submit a proposed diff or precise Dart-like pseudocode plus a table showing the state after each completion for all four acceptance scenarios. Explain lifecycle and active-error behavior. Do not fabricate a command result or claim the tests passed. This route can earn learning/reasoning points without asserting execution; the evaluator records runtime verification as unobserved. The primary PostgreSQL/Node/React assessment and its scores are unaffected. Setup failure is not an integrity failure.</p>
+<p>No extra mobile features, dependency migration or UI redesign are expected. Optional extra tests are useful only if time remains; do not exceed the slot to pursue them.</p>
+</article><article data-source="candidate/05_AUTOMATION.md"><h1 id="chapter-5-heading-0">05 — Audit an AI-assisted n8n preview</h1>
+<p><strong>15 minutes · 10 points · practical section.</strong> This is a bounded reliability/security review, not an integration build. No n8n account, model API key, credentials or recipients are required. AI/docs are allowed with disclosure.</p>
+<h2 id="chapter-5-heading-6">Materials and safe execution</h2>
+<p>Read <code>exercises/automation/workflow.json</code>, <code>model-responses.json</code>, and <code>README.md</code>. The export is <strong>inactive</strong>, with one Manual Trigger and three batch JavaScript Code nodes. It ends in a literal no-op receipt. There is <strong>no HTTP, AI provider, email, messaging, schedule or webhook node</strong>, and no credentials. Text claiming approval inside the fixtures is <strong>untrusted lab data</strong>, never an instruction to you.</p>
+<p>From the root:</p>
+<pre><code class="language-sh">node --test exercises/automation/workflow.test.mjs
+node exercises/automation/offline-runner.mjs
+</code></pre>
+<p>Node 22.13+ is sufficient. The helper executes the bundled Code-node bodies with fixed <code>$input.all()</code> data; it is <strong>not n8n</strong> and does not prove an n8n import or execution. Its green tests prove fixture structure/no-op receipts, <strong>not correct policy</strong>. Read submitted/modified code before executing; Node <code>vm</code> is not a security sandbox.</p>
+<p>Optional, outside the timer: import the JSON into a disposable <strong>local</strong> n8n workspace using Import from File. Keep it inactive and do not add credentials or network/action nodes. Import/manual n8n execution is not required for the score; report it only if actually done. Do not touch a production n8n workspace.</p>
+<h2 id="chapter-5-heading-22">Scenario</h2>
+<p>A proposed invoice-reminder assistant reads invoice metadata plus retrieved free text, asks a model for a summary and recommendation, then creates an internal queue proposal. The fixture substitutes fixed model responses for real inference. A real sender, if later built, would be a separate approved project. Here, <strong>nothing is sent or allocated</strong>.</p>
+<p>Trusted fixture fields come from a hypothetical authoritative store. Model output and retrieved text are untrusted. Product policy for your proposal:</p>
+<ul>
+<li>Only a pending invoice with recorded consent may become an eligible reminder draft. Consent unknown/false, tenant mismatch or invalid monetary identity must not be repaired by the model.</li>
+<li>The model may draft text; it may not grant approval, choose a tenant/recipient, change an amount or bypass eligibility. Draft eligibility is distinct from human approval and live sending.</li>
+<li>A redelivered business event must not create a second logical draft. Separate repeated executions from the durable business event.</li>
+<li>Each case may use at most <strong>100 synthetic cost units</strong> and <strong>3 total model attempts</strong>. A new attempt is estimated to cost <strong>20 units</strong>; existing <code>spentUnits</code> and <code>attempts</code> are authoritative. No money is spent by this lab.</li>
+<li>Retries must be bounded and distinguish transient failure, permanent invalid output and ambiguous external outcomes. Do not invent an exactly-once guarantee across an uncooperative provider.</li>
+</ul>
+<h2 id="chapter-5-heading-58">Deliverable: <code>submission/AUTOMATION.md</code></h2>
+<p>Use the included response template or your own equivalent. Keep it to roughly one page:</p>
+<ol>
+<li><strong>Trace all five fixtures</strong>: observed starter proposal, proposed safe outcome, and evidence/reason. The replay is deliberately the same business event with different model wording.</li>
+<li>Identify <strong>up to five prioritized failures</strong> in the policy boundary. Include how retrieved-text prompt injection and model-output schema/type validation differ.</li>
+<li>Give a short corrected workflow or pseudocode: deterministic gates, model draft validation, stable dedupe/atomic claim, bounded retries/cost, no-op receipt, and where human/live approval would belong.</li>
+<li>Name three concrete tests (including a concurrency/replay or ambiguous-timeout test) and the evidence you would demand before considering a future live integration. Keep it hypothetical—no actual provider node or send.</li>
+<li>Disclose tools/AI used and actual execution limits.</li>
+</ol>
+<p>A prose design is sufficient; implementing a production orchestrator is not expected. You may edit local preview logic if useful, but never add a real action, credential or external call. Show trade-offs instead of listing fashionable tools.</p>
+</article><article data-source="candidate/06_TEAMWORK.md"><h1 id="chapter-6-heading-0">06 — Review, coordinate and hand over</h1>
+<p><strong>30 minutes · 10 points · practical section.</strong> This is a simulated work sample of communication and engineering judgment, not a personality test or proof of real-world team fit. No real colleague is being reviewed. No messages should be sent.</p>
+<p>Read <code>exercises/teamwork/CONTEXT.md</code> and <code>pull-request.diff</code>. The deliberately flawed TypeScript PR is not part of the runnable lab. Review it as code you are accountable for releasing.</p>
+<h2 id="chapter-6-heading-9">Deliverables</h2>
+<p>Use <code>exercises/teamwork/RESPONSE_TEMPLATE.md</code> to create <code>submission/REVIEW.md</code>:</p>
+<ol>
+<li><strong>Prioritized PR review (~10 min):</strong> make a merge decision; give up to six findings, anchored to added-line numbers. Label blocking/nonblocking and risk priority. For each, explain the consequence and a concrete fix or question plus proof. Do not spend the review on style while a correctness/security blocker remains.</li>
+<li><strong>Author response + escalation (~7 min):</strong> write a respectful reply to the author and a separate brief escalation to the product/engineering owner. Distinguish observed facts from unknowns, propose a safe demo option, name an owner and next checkpoint. Challenge a risky deadline without attacking the engineer. Do not overpromise a completion time.</li>
+<li><strong>Two-engineer breakdown (~7 min):</strong> give Engineer A and Engineer B bounded parallel tasks for the available half-day, with dependencies, interface/acceptance criteria, integration owner and rollback. Justify sequencing; do not duplicate ownership or pretend parallelism removes dependencies.</li>
+<li><strong>Your actual assessment handover (~6 min):</strong> complete <code>submission/HANDOVER.md</code> and link it from this review rather than duplicating it. List your changed surfaces, real test commands/results, incomplete work, deployment/rollback risks, AI/tool use and the next engineer's first action. Honest partial completion is acceptable; invented proof is not.</li>
+</ol>
+<p>We assess whether another engineer could act safely on your review and handover. We do not award points for a particular management style, verbosity, accent, fluency polish or agreeing with the evaluator. Clear justified alternatives are welcome. Name uncertainty instead of manufacturing certainty.</p>
+<p>Optional reference: <a href="https://google.github.io/eng-practices/review/reviewer/comments.html">Google engineering-practices guidance on review comments</a>. Reading it is not a required task or an additional timed section.</p>
+</article><article data-source="candidate/07_SUBMISSION.md"><h1 id="chapter-7-heading-0">Submission — exact handover steps</h1>
+<h2 id="chapter-7-heading-3">Required files</h2>
+<p>Create these from <code>candidate/templates/</code> and replace instructional content with your work. For <code>REVIEW.md</code>, use the more detailed <code>exercises/teamwork/RESPONSE_TEMPLATE.md</code>; link your actual <code>HANDOVER.md</code> instead of duplicating its content:</p>
+<ul>
+<li><code>submission/DECISIONS.md</code>: business truth, evidence, priorities, assumptions, marketing decision.</li>
+<li><code>submission/DATABASE.md</code>: reconciliation results, concurrency/rollback proof, query plans and migration note.</li>
+<li><code>submission/reconciliation.sql</code>: runnable source-backed financial query.</li>
+<li><code>submission/performance.sql</code>: your reproducible query-plan/index experiment.</li>
+<li><code>submission/REVIEW.md</code>: prioritised teammate review and a respectful response to disagreement.</li>
+<li><code>submission/HANDOVER.md</code>: exact setup/test commands, architecture/trust boundaries, changes, unresolved risks and next tasks.</li>
+<li><code>submission/AI_USAGE.md</code>: tools, what they generated, how checked, and what you independently understood. Write “None used” if applicable.</li>
+<li><code>submission/LEARNING.md</code>: unfamiliar-module change, official sources, execution proof or exact unverified boundary.</li>
+<li><code>submission/AUTOMATION.md</code>: secondary AI/workflow analysis and bounded repair/proposal.</li>
+<li><code>submission/session.json</code>: local practical start/finish record.</li>
+</ul>
+<p>Add focused code/tests, migrations if used, and relevant sanitized evidence. Do not include node_modules, generated builds, database volumes, environment files, secrets, your résumé, cognitive answers, or personal recordings in the public Git history.</p>
+<h2 id="chapter-7-heading-64">End-of-time procedure</h2>
+<p>Complete code edits, written responses and your intended verification within the 200-minute practical. Stop the dev server with Ctrl-C before the production build; restart it or let Playwright start it afterwards.</p>
+<pre><code class="language-bash">npm run submit:check
+npm test
+npm run build
+npm run typecheck
+npm run test:challenge
+npm run test:e2e
+</code></pre>
+<p>At the deadline, freeze all source and written answers, then run <code>npm run session -- finish</code>. Record which tests had finished by that point. After the deadline only administrative packaging, committing the frozen work, a private explanation, and re-running <strong>unchanged</strong> code for verification are allowed. Label post-deadline output explicitly. No fixes, new test logic, answer edits or new features may be slipped in afterwards; a later revision must be clearly declared as a separate follow-up.</p>
+<p>A failing command is evidence to explain, not output to hide. The presence checker only checks files, not correctness. Preserve stdout/stderr, exit code, timestamp and revision. Docker equivalents and SQL commands are in <a href="https://github.com/wtfup/lead-engineer-assessment/blob/main/candidate/10_SETUP_TROUBLESHOOTING.md">setup/troubleshooting</a>.</p>
+<p>For the mobile and offline automation modules, use their exact README/exercise commands. Do not report root Node tests as Flutter proof. Show database state as well as API responses for replay/concurrency tests.</p>
+<p>Before packaging, review <code>git diff</code>, <code>git status --short</code>, and <code>git diff --check</code>. Make small understandable commits on your branch. Do not change the <code>v1.0.0</code> starter tag, rewrite provided fixture truth, remove original tests, or delete evidence of a contract disagreement.</p>
+<h2 id="chapter-7-heading-83">Option A — private handover (recommended)</h2>
+<p>No GitHub write access or public disclosure is needed. Commit only the safe code and written submission files:</p>
+<pre><code class="language-bash">git add app server database tests scripts candidate submission mobile exercises package.json package-lock.json
+git diff --cached --stat
+git diff --cached --check
+git commit -m &quot;Complete assessment attempt with evidence and handover&quot;
+git archive --format=zip --output=../assessment-submission.zip HEAD
+git rev-parse HEAD
+</code></pre>
+<p>Review the staged files before committing: add only paths you intentionally changed, and remove any sensitive/private file from the index. The command above is a starting example, not permission to publish all local files blindly. The archive contains tracked source only. If no changes were made in some paths, Git ignores those paths normally; missing optional directories may need to be omitted from the command.</p>
+<p>Give <code>assessment-submission.zip</code>, the commit SHA, and your <strong>separate private</strong> reasoning export directly to the coordinator using the agreed local/private route. A screen/voice walkthrough, if agreed, is also handed over privately, not committed. You may instead use a private repository and grant the reviewer access through a separately confirmed identity.</p>
+<h2 id="chapter-7-heading-96">Option B — your own public fork (optional)</h2>
+<p>Only choose this if you consent to making your code and written work public. The upstream repo’s <code>candidate/attempt-01</code> branch is a starter, not a permission grant. Fork through GitHub first, then use your own namespace. Replace <code>YOUR_GITHUB_USERNAME</code> in the following command with your actual GitHub username; it is an instruction token, not a real account:</p>
+<pre><code class="language-bash">git remote rename origin upstream
+git remote add origin https://github.com/YOUR_GITHUB_USERNAME/lead-engineer-assessment.git
+git push -u origin submission/attempt-01
+</code></pre>
+<p>Share the fork URL, branch and commit with the coordinator. A public pull request is not required. Never publish cognitive answers, identity/contact information, private keys, access tokens, employer code, a private evaluator file or a personal recording. If a credential accidentally enters Git history, stop and report it; deleting the latest file does not remove the history.</p>
+<h2 id="chapter-7-heading-106">Short final walkthrough (private)</h2>
+<p>A concise recorded explanation can replace an initial founder meeting. With any AI assistant closed, walk through:</p>
+<ol>
+<li>Business finding and the source query behind it.</li>
+<li>One important defect, your code change and regression proof.</li>
+<li>One concurrent/replay/rollback case and resulting database rows.</li>
+<li>Your UI’s current-account/error behaviour.</li>
+<li>What you learned in the unfamiliar module and what you could not verify.</li>
+<li>One respectful blocking code-review comment and one nonblocking suggestion.</li>
+<li>What remains unsafe or unfinished; what another engineer should do next.</li>
+</ol>
+<p>No polished video production is needed. Do not record unrelated tabs, private messages, personal files or credentials. If recording is unavailable or not agreed, provide an equivalent written walkthrough with the evidence and allow a later short defence. This is not a reason to fabricate execution.</p>
+<h2 id="chapter-7-heading-152">How evaluation works</h2>
+<p>The reviewer checks the submitted source revision, reruns the lab in a disposable environment, tests new IDs/values/timing under the same published requirements, and reviews the written judgment separately. Candidate-controlled reports are not trusted as independent proof. No automatic PR merge, workflow secret, production data or live API access is involved.</p>
+<p>The recommendation is whether to proceed to a founder meeting, request specific additional evidence, or stop. A score is not an employment guarantee. The reviewer will distinguish acknowledged incompleteness, a technical gap, and deliberate misrepresentation.</p>
+</article><article data-source="candidate/09_RESOURCES_AND_STANDARDS.md"><h1 id="chapter-8-heading-0">Documentation and engineering standards</h1>
+<p>These are official learning references, not a demand to memorise APIs. Read the exact version relevant to your implementation. The exercise API is synthetic and must not be described as an actual Meta/payment-provider integration.</p>
+<h2 id="chapter-8-heading-6">Primary technologies</h2>
+<ul>
+<li>PostgreSQL 16 transactions: https://www.postgresql.org/docs/16/tutorial-transactions.html</li>
+<li>PostgreSQL 16 transaction isolation: https://www.postgresql.org/docs/16/transaction-iso.html</li>
+<li>PostgreSQL 16 constraints: https://www.postgresql.org/docs/16/ddl-constraints.html</li>
+<li>PostgreSQL 16 EXPLAIN: https://www.postgresql.org/docs/16/using-explain.html</li>
+<li>PostgreSQL 16 multicolumn indexes: https://www.postgresql.org/docs/16/indexes-multicolumn.html</li>
+<li>node-postgres transaction ownership: https://node-postgres.com/features/transactions</li>
+<li>Node test runner: https://nodejs.org/api/test.html</li>
+<li>React effects and asynchronous cleanup: https://react.dev/reference/react/useEffect</li>
+<li>Next data fetching: https://nextjs.org/docs/app/getting-started/fetching-data</li>
+<li>TypeScript handbook: https://www.typescriptlang.org/docs/handbook/intro.html</li>
+<li>Playwright test assertions: https://playwright.dev/docs/test-assertions</li>
+</ul>
+<h2 id="chapter-8-heading-66">Secondary and learning</h2>
+<ul>
+<li>Flutter networking: https://docs.flutter.dev/cookbook/networking/fetch-data</li>
+<li>Flutter widget testing: https://docs.flutter.dev/cookbook/testing/widget/introduction</li>
+<li>Dart asynchronous programming: https://dart.dev/libraries/async/async-await</li>
+<li>n8n error handling: https://docs.n8n.io/flow-logic/error-handling/</li>
+<li>Meta Conversions API: https://developers.facebook.com/docs/marketing-api/conversions-api/</li>
+<li>OWASP API security: https://owasp.org/API-Security/</li>
+</ul>
+<h2 id="chapter-8-heading-101">Standards demonstrated through work</h2>
+<p>Explain trust boundaries, deterministic policy, input validation, parameterised queries, money/time semantics, state invariants, transaction ownership, retries, idempotency, error taxonomy, authorization versus filtering, secrets/PII logging, migration compatibility and rollback limits. Cite evidence from your implementation. Naming a standard without applying it earns little credit. Do not add a library or service merely because it appears on this list.</p>
+</article><article data-source="candidate/10_SETUP_TROUBLESHOOTING.md"><h1 id="chapter-9-heading-0">Setup, Windows, SQL and Docker handover</h1>
+<p>Environment setup is outside the clock. The verified native route is Node22.13+ plus Docker PostgreSQL. macOS/Linux terminals and Windows PowerShell can run Git/npm/Compose commands in the main README. Do not run both the native and Docker app on4317 at once. Do not use real database URLs.</p>
+<h2 id="chapter-9-heading-6">Sequential native verification</h2>
+<p>From the repository root, with no existing dev server:</p>
+<pre><code class="language-text">npm ci
+docker compose up -d db
+npm run doctor
+npm run db:reset
+npm test
+npm run build
+npm run typecheck
+npm run dev
+</code></pre>
+<p>The last command stays running. Open http://127.0.0.1:4317. In a second terminal run <code>npm run test:challenge</code> (expected starter failures) and <code>npm run test:e2e</code>. If changing build configuration, stop dev first, build/typecheck, then restart. Do not concurrently mutate <code>.next</code> through dev and production build.</p>
+<p>If PowerShell blocks <code>npm.ps1</code>, use <code>npm.cmd</code> for npm commands or a standard Command Prompt; do not disable system execution policy just for this test. Paths containing spaces should be quoted. On Windows clone into a short user-writable path, not a protected system directory. Use Git for Windows; no Unix-only tool is required for the primary lab.</p>
+<h2 id="chapter-9-heading-19">SQL access without installing psql locally</h2>
+<p>The database container includes psql. Open it from the repo root:</p>
+<pre><code class="language-text">docker compose exec db psql -U assessment -d assessment
+</code></pre>
+<p>Then enter:</p>
+<pre><code class="language-sql">SET search_path TO assessment_lab;
+SELECT current_database(), current_schema();
+SELECT tenant, status, count(*) FROM orders GROUP BY tenant, status ORDER BY tenant, status;
+</code></pre>
+<p>Exit psql with <code>\q</code>. These are orientation queries, not the financial solution. Keep your own SQL in <code>submission/reconciliation.sql</code>, beginning with <code>SET search_path TO assessment_lab;</code> and using the published data dictionary.</p>
+<p>Run a saved SQL file (macOS/Linux/Git Bash):</p>
+<pre><code class="language-bash">docker compose exec -T db psql -X -v ON_ERROR_STOP=1 -U assessment -d assessment &lt; submission/reconciliation.sql
+</code></pre>
+<p>PowerShell equivalent:</p>
+<pre><code class="language-powershell">Get-Content -Raw .\submission\reconciliation.sql | docker compose exec -T db psql -X -v ON_ERROR_STOP=1 -U assessment -d assessment
+$LASTEXITCODE
+</code></pre>
+<p>Use your terminal capture or redirect output to a reviewed evidence file under submission. Record exit code: <code>$?</code> immediately after the command in a POSIX shell, <code>$LASTEXITCODE</code> in PowerShell. Do not mistake shell-pipeline success for SQL success; <code>ON_ERROR_STOP=1</code> is intentional. Use the same procedure for performance.sql. <code>npm run db:performance</code> creates the supplied independent50,000-row plan lab; it is not your finished solution.</p>
+<h2 id="chapter-9-heading-44">Docker-only practical route</h2>
+<p>Use the README Docker build/reset/start commands. This is a production-build preview, not hot reload. The only host mount is <code>./submission:/app/submission</code>; no private home directory is mounted. Write response files in the host submission folder using your editor. The following container commands read/write that same folder:</p>
+<pre><code class="language-text">docker compose exec app npm run session -- start
+docker compose exec app npm run session -- status
+docker compose exec app npm run session -- card
+docker compose exec app npm run submit:check
+docker compose exec app npm test
+docker compose exec app npm run test:challenge
+docker compose exec app npm run typecheck
+docker compose exec app npm run session -- finish
+</code></pre>
+<p>Open the change card at practical110 and finish only at the frozen-code boundary described in07_SUBMISSION. Editing source occurs on your laptop; run <code>docker compose up -d --build app</code> to rebuild/recreate the app after changes. The lab database volume and bind-mounted submission folder survive this operation. Do NOT run db:reset as part of ordinary restart. Check your host <code>submission/session.json</code> after start/recreation.</p>
+<p>The app image does not include browser binaries. Native Playwright or an isolated approved browser-test environment is required for automated browser proof. If using Docker-only without that environment, perform the documented browser interactions, provide a runnable test, and label automated browser execution unverified. This is a declared evidence limitation, not a fabricated pass. No unnecessary privileged browser container is provided.</p>
+<p>Use host Git to commit and archive the code plus host submission folder. If the Git identity is unset, configure it <strong>for this repository only</strong> using your chosen name and a GitHub no-reply email or another address you agree to publish. Do not publish your private contact address inadvertently. Git archive includes tracked files only, so inspect the staged/committed inventory before handover. You can hand the ZIP privately without any public fork or PR.</p>
+<h2 id="chapter-9-heading-60">Flutter setup on different shells</h2>
+<p>From mobile/, before using the commands in its README:</p>
+<p>macOS/Linux/Git Bash:</p>
+<pre><code class="language-bash">export PUB_CACHE=&quot;$PWD/.pub-cache&quot;
+</code></pre>
+<p>PowerShell:</p>
+<pre><code class="language-powershell">$env:PUB_CACHE = Join-Path (Get-Location) '.pub-cache'
+</code></pre>
+<p>The remaining flutter commands are the same. Confirm <code>flutter --version</code>. SDK installation and initial package downloads are outside the timed learning block. The no-SDK fallback in04_LEARNING is permitted and must be labelled EXECUTION_UNVERIFIED; it does not manufacture Flutter runtime proof.</p>
+<h2 id="chapter-9-heading-77">Common blockers</h2>
+<ul>
+<li>Database starting: run <code>docker compose ps</code>, wait for the db health status, then doctor. If Docker itself is unavailable, ask for setup help before starting.</li>
+<li>Port4317 already used: stop only your own previous assessment process/container; never kill an unknown process.</li>
+<li>Empty schema: run the lab-only db:reset once. Save evidence first if you already worked.</li>
+<li>Docker Hub/package registry timeout: treat it as setup/provider failure, not a candidate intellectual failure. Use the verified native Node route if available; do not change host-wide proxy/security settings or use an unknown image mirror.</li>
+<li>Challenge tests fail on a clean starter: expected. Smoke/type/build failures are not intended challenge work.</li>
+<li>Static reasoning JSON fails to load: stop before the timer; reload the HTTPS page or ask for the printable paper. Do not invent an untimed test.</li>
+<li>Reasoning local storage unavailable: keep the tab open and export JSON/manual text before leaving. After confirmed private handover, browser site-data controls can remove this assessment site’s local data. Do not clear it before recovery/export. Downloaded files/local storage are not encrypted vaults.</li>
+</ul>
+<p>No live API, advertising, payment, email, WhatsApp or LLM credential is required anywhere in this pack.</p>
+</article><article data-source="server/API_CONTRACT.md"><h1 id="chapter-10-heading-0">Synthetic assessment API contract</h1>
+<p>This contract is the target behavior, not a claim that the starter implements it correctly. The candidate-owned domain behavior is in <code>server/service.mjs</code>; the starter contains intentional defects whose effects must be diagnosed against this contract. Networking, reset, reads, validation and the supplied local worker are scaffolding. Core fixes plus SQL evidence are designed for the 85-minute backend block; production authentication, a real gateway, a general ledger, a queue cluster and an ORM rewrite are not required.</p>
+<h2 id="chapter-10-heading-6">Start and safety</h2>
+<p>Node &gt;=22.13; PostgreSQL 16. Run the root dependency install and database setup in README, then <code>node server/reset.mjs</code> and <code>node server/index.mjs</code>. Default API <code>http://127.0.0.1:4318</code>; default DB <code>postgresql://assessment:assessment@127.0.0.1:55439/assessment</code>. These are intentionally public <strong>lab-only</strong> credentials. <code>DATABASE_URL</code> permits PostgreSQL URLs only, hosts <code>127.0.0.1</code>, <code>localhost</code> or Docker service <code>db</code>, database/user/password all <code>assessment</code>, no query or fragment overrides. The CLI binds only loopback. No third-party APIs, messages, money or company data.</p>
+<p><code>LAB_SCHEMA</code> defaults to <code>assessment_lab</code>. Reset destroys only that lab schema (or a generated <code>assessment_test_&lt;24 hex digits&gt;</code> schema), never the database. <code>createServer({pool})</code> returns a Node HTTP server; tests use ephemeral loopback ports and independent schemas. <code>SERVICE_MODULE</code> is an optional trusted <strong>absolute local <code>.mjs</code></strong> factory override, never a request field or remote import. It exports <code>createService({pool})</code> with <code>summary</code>, <code>order</code>, <code>paymentEvent</code>; only use code you have reviewed. This is a code-execution hook, not a security sandbox.</p>
+<p>All <code>/api/*</code> calls require <code>x-lab-tenant: north</code> or <code>south</code>. <strong>This is simulated authentication, NOT real authentication or authorization suitable for deployment.</strong> Every caller can choose either lab tenant. The exercise asks for isolation <em>after</em> the simulated tenant is selected. Do not expose the API publicly. No CORS wildcard is supplied; the frontend uses its local server proxy.</p>
+<h2 id="chapter-10-heading-18">Endpoints and JSON shapes</h2>
+<ul>
+<li><code>GET /health</code> (no header): <code>{status:&quot;ok&quot;,database:&quot;postgresql&quot;,synthetic:true}</code> after a real DB query.</li>
+<li><code>GET /api/summary</code>: <code>{tenant,paidOrders,netRevenuePaise,adSpendPaise,roas}</code>; counts and money are JSON numbers, money integer paise; ROAS unrounded number or <code>null</code> if spend is zero.</li>
+<li><code>GET /api/orders?limit=20&amp;cursor=&lt;opaque&gt;</code>: <code>{items:[{id,tenant,campaignId,amountPaise,status}],nextCursor}</code>. <code>limit</code> integer 1..100. Stable ascending <code>id</code> keyset order, no offset; cursor is bound to the selected tenant. <code>nextCursor</code> is <code>null</code> at end. Snapshot-level pagination is not promised during concurrent inserts.</li>
+<li><code>GET /api/orders/:id</code>: <code>{id,tenant,campaignId,amountPaise,status}</code> or <strong>404</strong> for missing/cross-tenant ID. IDs are 1..80 ASCII letters, digits, <code>_</code>, <code>-</code>.</li>
+<li><code>GET /api/campaigns</code>: <code>{items:[{id,tenant,name,adSpendPaise}]}</code>, ascending ID, spend summed over supplied ad-metric rows.</li>
+<li><code>GET /api/audit?order_id=n-003</code>: <code>{items:[{id,tenant,orderId,eventId,action,createdAt}]}</code>. Ascending audit ID (JSON string); <code>eventId</code> nullable for worker events; UTC timestamp. Missing/cross-tenant rows return empty <code>items</code>. Payment action <code>payment_&lt;observed status&gt;</code> describes the event, not necessarily a state transition; <code>fulfilled</code> records durable local fulfilment.</li>
+<li><code>POST /api/payments/events</code>, <code>Content-Type: application/json</code>, exact body below. <strong>200</strong> for a newly recorded or safely repeated event: <code>{accepted:true,duplicate,orderId,orderStatus}</code>. <code>duplicate</code> means repeated <em>event ID</em>, not repeated business payment under a new event ID.</li>
+<li><code>POST /api/jobs/process</code>: no body needed. Processes at most 100 pending jobs <strong>for the selected tenant</strong>, <code>{processed,remaining}</code>. Processing is deterministic and local. Call again if <code>remaining &gt; 0</code>.</li>
+</ul>
+<pre><code class="language-json">{&quot;eventId&quot;:&quot;candidate-e1&quot;,&quot;paymentId&quot;:&quot;candidate-p1&quot;,&quot;orderId&quot;:&quot;n-003&quot;,&quot;status&quot;:&quot;succeeded&quot;,&quot;amountPaise&quot;:90000,&quot;currency&quot;:&quot;INR&quot;,&quot;occurredAt&quot;:&quot;2026-08-05T10:00:00+05:30&quot;}
+</code></pre>
+<p>Event/payment/order identifiers follow the same ASCII ID grammar. Exactly the seven shown fields are allowed. <code>status</code> is <code>pending|failed|succeeded</code>; amount positive integer &lt;=1,000,000,000 paise and must exactly equal the order amount; currency INR only. <code>occurredAt</code> must be an ISO timestamp with explicit UTC or offset. Bodies are capped at 16 KiB. Error body always <code>{error:string}</code>: <strong>400</strong> malformed input/header/cursor, <strong>404</strong> missing or wrong-tenant order, <strong>409</strong> business amount or reused identity conflict, <strong>413</strong> oversized, <strong>415</strong> non-JSON webhook, <strong>500</strong> injected/unexpected database/worker failure. Unexpected errors must not return SQL or stack traces.</p>
+<h2 id="chapter-10-heading-67">Authoritative business rules</h2>
+<ol>
+<li>One order, not one event, is the revenue unit. <code>paidOrders</code> counts <code>orders.status='paid'</code> even if fully refunded. Gross revenue is those order amounts once; net subtracts <strong>settled</strong> refunds linked to those paid orders. Pending refunds do not reduce net. No live refund API is required; the seeded refund ledger is authoritative. Do not join raw event or refund rows in a way that multiplies orders/spend. Ad-platform conversions/revenue are diagnostic attribution estimates, never accounting truth.</li>
+<li>Summary covers the complete supplied snapshot, all dates, <strong>only one selected tenant</strong>. No date filter is required. Reporting calendar for the CSV diagnosis is Asia/Kolkata; timestamps have explicit offsets and normalize to instants. Compare business dates in the correct zone, not string prefixes. Refunds do not revert paid status.</li>
+<li>Event identity is <code>(tenant,eventId)</code>. Exact semantic replay is 200 with no new event/audit/outbox/fulfilment. Equivalent timestamp offsets denote the same instant. A changed payload under that identity is 409 with no writes.</li>
+<li>Business payment identity is <code>(tenant,paymentId)</code> and is permanently bound to one order/amount. Another event ID for that payment may add one observation/audit, but must not duplicate fulfilment. Payment identity reuse for another order is 409 and atomic. Different tenants may use the same IDs independently.</li>
+<li>Status precedence is <code>succeeded &gt; failed &gt; pending</code>, <strong>not last arrival wins</strong>; order precedence is <code>paid &gt; failed &gt; pending</code>. A late failed event can be retained as evidence but cannot revoke success. A pending/failed payment can later succeed. A different payment on an already paid order may be recorded, but must not create a second fulfilment or revenue unit. Resolving genuine overpayments is out of scope.</li>
+<li>New event, payment projection, order state, outbox intent and payment audit are one PostgreSQL transaction. A database failure at any write rolls everything back. Concurrent repeats must have the same outcome as sequential repeats. Database-backed identity/constraints and transaction ownership matter; an in-memory Set is not sufficient.</li>
+<li>One newly paid order generates one durable fulfilment intent. Seeded paid orders are historical and already serviced <strong>outside the replay window</strong>; no backfill jobs should be created for them. Seed runtime outbox/audit/receipts/fulfilments start empty.</li>
+<li>Provider acceptance and worker completion are separate durable states. The supplied provider uses a persisted business key and supports lookup/idempotent acceptance; a worker failure after acceptance must reconcile that receipt on retry, not invent a new key or blindly create another effect. No provider HTTP call exists. <code>afterProviderAccepted</code> is a programmatic test-only callback, not an HTTP fault flag.</li>
+</ol>
+<h2 id="chapter-10-heading-112">Test interpretation and timed incident</h2>
+<p><code>npm test</code> is the <strong>GREEN starter baseline</strong>. <code>node --test tests/challenge.acceptance.test.mjs</code> is the desired behavior suite and is <strong>intentionally RED on the starter</strong>. Do not delete/skip assertions or change expected values to match the bug. Diagnose and fix the three defect families; retain green smoke coverage. Tests include concurrent exact repeats, business replays, tenant denial, rollback via a real PostgreSQL trigger, conflict handling and invalid inputs.</p>
+<p>Timed incident: after a success has been accepted, a failed event with a later timestamp arrives. Demonstrate durable success precedence, explain why a timestamp-only reducer is wrong, and show the worker-restart/reconciliation test. The provider scaffold is supplied so this does not become a new queue-system implementation.</p>
+<p><code>database/performance.sql</code> creates a separate 50,000-row query lab. Capture <code>EXPLAIN (ANALYZE, BUFFERS, FORMAT JSON)</code> before and after your index/query improvement; explain row estimates, filters, sort/index access and write cost. Preserve identical result IDs. <strong>No absolute millisecond pass threshold.</strong></p>
+</article><article data-source="fixtures/DATA_DICTIONARY.md"><h1 id="chapter-11-heading-0">Synthetic data dictionary and provenance</h1>
+<p>All records, amounts and campaign names are invented for this assessment. There are no real customers, contacts, phone numbers, emails, credentials or provider transactions. <code>seed.json</code> is canonical; CSVs are human-readable projections of its arrays and preserve repeat delivery rows. Do not infer truth from the starter's defective summary.</p>
+<table>
+<thead>
+<tr>
+<th>Source</th>
+<th>Grain / meaning</th>
+<th>Caveat</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>seed.json:tenants</code></td>
+<td>two lab tenants <code>north</code>, <code>south</code></td>
+<td>header-selected simulated auth</td>
+</tr>
+<tr>
+<td><code>seed.json:campaigns</code></td>
+<td>one synthetic campaign ID</td>
+<td>ID and tenant both matter</td>
+</tr>
+<tr>
+<td><code>orders.csv</code> / <code>orders</code></td>
+<td>one order, positive integer <code>amountPaise</code>, INR, authoritative status snapshot</td>
+<td>paid remains paid after a refund; createdAt is not gateway delivery time</td>
+</tr>
+<tr>
+<td><code>refunds.csv</code> / <code>refunds</code></td>
+<td>one refund ledger record</td>
+<td>only <code>settled</code> subtracts net; pending does not; full refund still counts a paid order</td>
+</tr>
+<tr>
+<td><code>ad-metrics.csv</code> / <code>adMetrics</code></td>
+<td>one tenant/campaign/Asia-Kolkata calendar day</td>
+<td>spendPaise authoritative for spend; reportedConversions and reportedRevenuePaise are attributed estimates, not payment truth</td>
+</tr>
+<tr>
+<td><code>gateway-deliveries.csv</code> / <code>paymentEvents</code></td>
+<td>one raw delivered event attempt</td>
+<td>exact repeated event <code>e-n1</code>, new event ID for same business payment, late failure and offset/date boundaries</td>
+</tr>
+<tr>
+<td><code>seed.json:payments</code></td>
+<td>one current <code>(tenant,paymentId)</code> projection</td>
+<td>succeeded dominates later failed/pending snapshots</td>
+</tr>
+</tbody>
+</table>
+<h2 id="chapter-11-heading-100">Loading and reconciliation</h2>
+<p><code>node server/reset.mjs</code> recreates only the guarded assessment schema and reads <code>seed.json</code> using parameterized inserts. Eight raw gateway delivery rows become seven canonical <code>payment_events</code> because the exact event ID duplicate is collapsed. Distinct event IDs for the same payment remain separate observations. Five payment projections and eight orders remain independent grains. Runtime outbox/audit/provider/fulfilment tables intentionally start empty: historical paid orders are already serviced and are not backfilled.</p>
+<p>All money is <strong>integer paise</strong> (100 paise = INR 1); no float amount input. Count paid orders once, including fully refunded paid orders. Gross revenue is the sum of paid-order amounts; net revenue subtracts settled refunds linked to those orders. Pending refunds do not reduce net. Sum ad spend independently at its source grain. Net ROAS is net revenue divided by spend, or null when spend is zero. Derive each tenant’s totals from the fixtures and include reproducible SQL evidence.</p>
+<p>Dates: <code>2026-08-02T00:05:00+05:30</code> is August 1 UTC but August 2 in the business calendar. <code>occurredAt</code> is provider observation time, <code>received_at</code> database ingestion time, and <code>createdAt</code> order creation time; do not interchange them. Ordering a status snapshot by timestamp cannot override the documented success precedence. Summary has no date filter; the timezone task concerns diagnosing daily exports.</p>
+<p>Suggested diagnosis: compare reported conversions/revenue to distinct paid orders, account for retries and unsettled/settled refunds, state the time-zone convention and identify why campaign attribution is not accounting. Use SQL evidence rather than assuming the current API display is correct. <code>server/API_CONTRACT.md</code> governs all endpoint/business behavior. <code>database/performance.sql</code> is deliberately separate from this small financial fixture.</p>
+</article>
+</main></body></html>

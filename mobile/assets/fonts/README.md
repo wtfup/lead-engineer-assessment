@@ -1,0 +1,1 @@
+Roboto-Regular.ttf and Roboto_LICENSE.txt are copied from the Flutter 3.38.5 SDK material_fonts cache. The font is bundled under its included Apache 2.0 license to avoid runtime Google Fonts requests. Keep the license with redistributed copies. Material icons are supplied through the Flutter SDK and its generated license bundle.

@@ -1,0 +1,5 @@
+tenant,campaignId,day,spendPaise,reportedConversions,reportedRevenuePaise
+north,n-search,2026-08-01,30000,4,400000
+north,n-search,2026-08-02,10000,2,180000
+north,n-social,2026-08-02,15000,3,450000
+south,s-search,2026-08-02,40000,4,600000

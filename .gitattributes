@@ -1,0 +1,2 @@
+# Keep fixture values identical across platforms; normalize CSV line endings in Git.
+*.csv text eol=lf

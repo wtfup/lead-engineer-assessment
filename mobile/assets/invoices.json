@@ -1,0 +1,4 @@
+[
+  {"id": "alpha-101", "tenant": "alpha", "amountPaise": 123456, "status": "pending"},
+  {"id": "beta-202", "tenant": "beta", "amountPaise": 450000, "status": "paid"}
+]

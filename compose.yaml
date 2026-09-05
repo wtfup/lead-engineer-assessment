@@ -1,0 +1,33 @@
+name: lead-engineer-assessment
+services:
+  db:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_USER: assessment
+      POSTGRES_PASSWORD: assessment
+      POSTGRES_DB: assessment
+    ports:
+      - "127.0.0.1:55439:5432"
+    volumes:
+      - assessment-db:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U assessment -d assessment"]
+      interval: 2s
+      timeout: 3s
+      retries: 30
+  app:
+    build: .
+    environment:
+      DATABASE_URL: postgresql://assessment:assessment@db:5432/assessment
+      WEB_HOST: 0.0.0.0
+      NEXT_TELEMETRY_DISABLED: "1"
+    ports:
+      - "127.0.0.1:4317:4317"
+    volumes:
+      - ./submission:/app/submission
+    depends_on:
+      db:
+        condition: service_healthy
+    command: ["npm", "start"]
+volumes:
+  assessment-db:
