@@ -1,3 +1,5 @@
+> **Supervised offline follow-up:** On this branch, open [OFFLINE_START_HERE.md](OFFLINE_START_HERE.md). It uses the submitted revision with its latest fixes, has a 40-minute no-AI/no-Internet brief, and a separate local Docker lab. For this round, those instructions take precedence over the original assessment below.
+
 # Lead Engineer — Founder’s Technical +1
 
 **A four-hour, evidence-first assessment. PostgreSQL, Node/TypeScript and React/Next are the primary gates.**

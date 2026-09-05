@@ -1,0 +1,47 @@
+name: lead-engineer-offline
+services:
+  db:
+    image: postgres:16-alpine
+    pull_policy: never
+    environment:
+      POSTGRES_USER: assessment
+      POSTGRES_PASSWORD: assessment
+      POSTGRES_DB: assessment
+    volumes:
+      - offline-db:/var/lib/postgresql/data
+    networks: [lab-only]
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U assessment -d assessment"]
+      interval: 2s
+      timeout: 3s
+      retries: 30
+  lab:
+    image: wtf-lead-offline:2790bc6
+    pull_policy: never
+    build:
+      context: ..
+      dockerfile: Dockerfile
+    init: true
+    command: ["sleep", "infinity"]
+    environment:
+      DATABASE_URL: postgresql://assessment:assessment@db:5432/assessment
+      NEXT_TELEMETRY_DISABLED: "1"
+      CI: "1"
+    volumes:
+      - ../server:/app/server
+      - ../tests:/app/tests
+      - ../submission:/app/submission
+      - ../app:/app/app
+      - ../fixtures:/app/fixtures:ro
+      - ../database:/app/database:ro
+      - .:/app/offline:ro
+      - ../offline-evidence:/app/offline-evidence
+    networks: [lab-only]
+    depends_on:
+      db:
+        condition: service_healthy
+volumes:
+  offline-db:
+networks:
+  lab-only:
+    internal: true
