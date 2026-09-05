@@ -1,0 +1,115 @@
+00:00 +0: loading /Users/amarbansal28/Downloads/repo/wtf/lead-engineer-assessment/mobile/challenges/latest_request_test.dart
+00:00 +0: late alpha success cannot overwrite newer beta data
+══╡ EXCEPTION CAUGHT BY FLUTTER TEST FRAMEWORK ╞════════════════════════════════════════════════════
+The following TestFailure was thrown running a test:
+Expected: exactly one matching candidate
+  Actual: _KeyWidgetFinder:<Found 0 widgets with key [<'beta-row'>]: []>
+   Which: means none were found but one was expected
+
+When the exception was thrown, this was the stack:
+#4      main.<anonymous closure> (file:///Users/amarbansal28/Downloads/repo/wtf/lead-engineer-assessment/mobile/challenges/latest_request_test.dart:19:5)
+<asynchronous suspension>
+#5      testWidgets.<anonymous closure>.<anonymous closure> (package:flutter_test/src/widget_tester.dart:192:15)
+<asynchronous suspension>
+#6      TestWidgetsFlutterBinding._runTestBody (package:flutter_test/src/binding.dart:1953:5)
+<asynchronous suspension>
+<asynchronous suspension>
+(elided one frame from package:stack_trace)
+
+This was caught by the test expectation on the following line:
+  file:///Users/amarbansal28/Downloads/repo/wtf/lead-engineer-assessment/mobile/challenges/latest_request_test.dart line 19
+The test description was:
+  late alpha success cannot overwrite newer beta data
+════════════════════════════════════════════════════════════════════════════════════════════════════
+00:00 +0 -1: late alpha success cannot overwrite newer beta data [E]
+  Test failed. See exception logs above.
+  The test description was: late alpha success cannot overwrite newer beta data
+
+00:00 +0 -1: late alpha error cannot replace beta success with error
+══╡ EXCEPTION CAUGHT BY FLUTTER TEST FRAMEWORK ╞════════════════════════════════════════════════════
+The following TestFailure was thrown running a test:
+Expected: no matching candidates
+  Actual: _KeyWidgetFinder:<Found 1 widget with key [<'load-error'>]: [
+            Text-[<'load-error'>]("Could not load invoices. Retry.", dependencies:
+[DefaultSelectionStyle, DefaultTextStyle, MediaQuery]),
+          ]>
+   Which: means one was found but none were expected
+
+When the exception was thrown, this was the stack:
+#4      main.<anonymous closure> (file:///Users/amarbansal28/Downloads/repo/wtf/lead-engineer-assessment/mobile/challenges/latest_request_test.dart:31:5)
+<asynchronous suspension>
+#5      testWidgets.<anonymous closure>.<anonymous closure> (package:flutter_test/src/widget_tester.dart:192:15)
+<asynchronous suspension>
+#6      TestWidgetsFlutterBinding._runTestBody (package:flutter_test/src/binding.dart:1953:5)
+<asynchronous suspension>
+<asynchronous suspension>
+(elided one frame from package:stack_trace)
+
+This was caught by the test expectation on the following line:
+  file:///Users/amarbansal28/Downloads/repo/wtf/lead-engineer-assessment/mobile/challenges/latest_request_test.dart line 31
+The test description was:
+  late alpha error cannot replace beta success with error
+════════════════════════════════════════════════════════════════════════════════════════════════════
+00:00 +0 -2: late alpha error cannot replace beta success with error [E]
+  Test failed. See exception logs above.
+  The test description was: late alpha error cannot replace beta success with error
+
+00:00 +0 -2: overlapping reload of same tenant uses latest request
+══╡ EXCEPTION CAUGHT BY FLUTTER TEST FRAMEWORK ╞════════════════════════════════════════════════════
+The following TestFailure was thrown running a test:
+Expected: exactly one matching candidate
+  Actual: _KeyWidgetFinder:<Found 0 widgets with key [<'fresh-alpha'>]: []>
+   Which: means none were found but one was expected
+
+When the exception was thrown, this was the stack:
+#4      main.<anonymous closure> (file:///Users/amarbansal28/Downloads/repo/wtf/lead-engineer-assessment/mobile/challenges/latest_request_test.dart:43:5)
+<asynchronous suspension>
+#5      testWidgets.<anonymous closure>.<anonymous closure> (package:flutter_test/src/widget_tester.dart:192:15)
+<asynchronous suspension>
+#6      TestWidgetsFlutterBinding._runTestBody (package:flutter_test/src/binding.dart:1953:5)
+<asynchronous suspension>
+<asynchronous suspension>
+(elided one frame from package:stack_trace)
+
+This was caught by the test expectation on the following line:
+  file:///Users/amarbansal28/Downloads/repo/wtf/lead-engineer-assessment/mobile/challenges/latest_request_test.dart line 43
+The test description was:
+  overlapping reload of same tenant uses latest request
+════════════════════════════════════════════════════════════════════════════════════════════════════
+00:00 +0 -3: overlapping reload of same tenant uses latest request [E]
+  Test failed. See exception logs above.
+  The test description was: overlapping reload of same tenant uses latest request
+
+00:00 +0 -3: alpha beta alpha switch cannot revive first alpha request
+══╡ EXCEPTION CAUGHT BY FLUTTER TEST FRAMEWORK ╞════════════════════════════════════════════════════
+The following TestFailure was thrown running a test:
+Expected: exactly one matching candidate
+  Actual: _KeyWidgetFinder:<Found 0 widgets with key [<'current-alpha'>]: []>
+   Which: means none were found but one was expected
+
+When the exception was thrown, this was the stack:
+#4      main.<anonymous closure> (file:///Users/amarbansal28/Downloads/repo/wtf/lead-engineer-assessment/mobile/challenges/latest_request_test.dart:57:5)
+<asynchronous suspension>
+#5      testWidgets.<anonymous closure>.<anonymous closure> (package:flutter_test/src/widget_tester.dart:192:15)
+<asynchronous suspension>
+#6      TestWidgetsFlutterBinding._runTestBody (package:flutter_test/src/binding.dart:1953:5)
+<asynchronous suspension>
+<asynchronous suspension>
+(elided one frame from package:stack_trace)
+
+This was caught by the test expectation on the following line:
+  file:///Users/amarbansal28/Downloads/repo/wtf/lead-engineer-assessment/mobile/challenges/latest_request_test.dart line 57
+The test description was:
+  alpha beta alpha switch cannot revive first alpha request
+════════════════════════════════════════════════════════════════════════════════════════════════════
+00:00 +0 -4: alpha beta alpha switch cannot revive first alpha request [E]
+  Test failed. See exception logs above.
+  The test description was: alpha beta alpha switch cannot revive first alpha request
+
+00:00 +0 -4: Some tests failed.
+
+Failing tests:
+  /Users/amarbansal28/Downloads/repo/wtf/lead-engineer-assessment/mobile/challenges/latest_request_test.dart: alpha beta alpha switch cannot revive first alpha request
+  /Users/amarbansal28/Downloads/repo/wtf/lead-engineer-assessment/mobile/challenges/latest_request_test.dart: late alpha error cannot replace beta success with error
+  /Users/amarbansal28/Downloads/repo/wtf/lead-engineer-assessment/mobile/challenges/latest_request_test.dart: late alpha success cannot overwrite newer beta data
+  /Users/amarbansal28/Downloads/repo/wtf/lead-engineer-assessment/mobile/challenges/latest_request_test.dart: overlapping reload of same tenant uses latest request

@@ -1,0 +1,80 @@
+=== Cross-tenant order access (curl, live API) ===
+-- as owner (south) --
+{"id":"s-001","tenant":"south","campaignId":"s-search","amountPaise":200000,"status":"paid"}
+-- as wrong tenant (north) --
+{"error":"Order not found"}
+HTTP 404
+
+=== Sequential replay + distinct event ID for same business payment (curl, live API) ===
+POST #1 (eventId=seq-e1, paymentId=seq-p1, orderId=n-005): {"accepted":true,"duplicate":false,"orderId":"n-005","orderStatus":"paid"}  HTTP 200
+POST #2 (identical, sequential replay):                   {"accepted":true,"duplicate":true,"orderId":"n-005","orderStatus":"paid"}   HTTP 200
+POST #3 (eventId=seq-e2-retry, same paymentId=seq-p1):     {"accepted":true,"duplicate":false,"orderId":"n-005","orderStatus":"paid"}  HTTP 200
+
+Direct DB row verification (not just HTTP status):
+SET
+--- payment_events for n-005 (expect 2: seq-e1, seq-e2-retry) ---
+   event_id   | payment_id |  status   | amount_paise
+--------------+------------+-----------+--------------
+ seq-e1       | seq-p1     | succeeded |        80000
+ seq-e2-retry | seq-p1     | succeeded |        80000
+(2 rows)
+
+--- payments for seq-p1 (expect exactly 1 row) ---
+ payment_id | order_id |  status   | amount_paise
+------------+----------+-----------+--------------
+ seq-p1     | n-005    | succeeded |        80000
+(1 row)
+
+--- outbox for n-005 (expect exactly 1 row, not 2) ---
+ tenant | order_id |     business_key     | status
+--------+----------+----------------------+---------
+ north  | n-005    | north:payment:seq-p1 | pending
+(1 row)
+
+--- audit for n-005 (expect 2 payment_ rows: one per accepted new event, not the duplicate) ---
+   event_id   |      action
+--------------+-------------------
+ seq-e1       | payment_succeeded
+ seq-e2-retry | payment_succeeded
+(2 rows)
+
+--- orders.status for n-005 (expect paid, exactly once) ---
+  id   | status
+-------+--------
+ n-005 | paid
+(1 row)
+
+
+=== True concurrent replay: 10 concurrent identical POSTs, same event ID (Node fetch, live API + real Postgres) ===
+accepted+duplicate=false count: 1
+accepted+duplicate=true count: 9
+
+Direct DB row verification after the race:
+SET
+--- payment_events for n-005 under 10 concurrent identical POSTs (expect exactly 1) ---
+ count
+-------
+     1
+(1 row)
+
+--- outbox for n-005 (expect exactly 1) ---
+ count
+-------
+     1
+(1 row)
+
+--- audit for n-005 (expect exactly 1 payment_succeeded row) ---
+ count
+-------
+     1
+(1 row)
+
+
+=== TRUE MULTI-PROCESS concurrency: 2 separate `node server/index.mjs` OS processes (different PIDs, different ports 4318/4319, sharing only Postgres), 5 concurrent identical POSTs to each ===
+process 1 pid=1565, process 2 pid=1566
+duplicate:false count: 1
+duplicate:true count: 9
+
+Direct DB row verification:
+payment_events for n-005: 1
+outbox for n-005: 1

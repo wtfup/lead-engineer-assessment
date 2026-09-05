@@ -29,6 +29,7 @@ class _InvoiceScreenState extends State<InvoiceScreen> {
   List<Invoice> _invoices = [];
   bool _loading = true;
   String? _error;
+  int _requestId = 0;
 
   @override
   void initState() {
@@ -39,6 +40,7 @@ class _InvoiceScreenState extends State<InvoiceScreen> {
   // Learning task: see candidate/04_LEARNING.md. Keep the client injectable.
   Future<void> _load() async {
     final requestedTenant = _tenant;
+    final requestId = ++_requestId; // only the latest request may apply its result
     setState(() {
       _loading = true;
       _error = null;
@@ -46,13 +48,13 @@ class _InvoiceScreenState extends State<InvoiceScreen> {
     });
     try {
       final invoices = await widget.api.loadInvoices(requestedTenant);
-      if (!mounted) return;
+      if (!mounted || requestId != _requestId) return;
       setState(() {
         _invoices = invoices;
         _loading = false;
       });
     } catch (_) {
-      if (!mounted) return;
+      if (!mounted || requestId != _requestId) return;
       setState(() {
         _error = 'Could not load invoices. Retry.';
         _loading = false;
